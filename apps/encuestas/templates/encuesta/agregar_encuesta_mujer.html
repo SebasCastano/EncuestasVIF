@@ -1,0 +1,127 @@
+{% extends 'base/base.html' %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+
+{% block title_block %} Encuesta Mujer {% endblock %}
+
+
+
+{% block title_content_block %}Encuesta Mujeres - VIF{% endblock %}
+
+{% block css_block %}
+
+    <!-- Select2 -->
+    {{ form.media.css }}
+    <link rel="stylesheet" href="{% static 'css/css_personalizados.css' %}">
+
+{% endblock %}
+
+{% block content_block %}
+    <form role="form" method="post"> {% csrf_token %}
+        <div class="form-group">
+            <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">I. SECCIÓN A: IDENTIFICACION DE LA PARTICIPANTE</h5>
+            </div>
+            <div class="box-body ">
+                <div class="row p-4">
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.fecha_encuesta layout="vertical" %}
+                    </div>
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.hora_inicio layout="vertical" %}
+                    </div>
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.hora_final layout="vertical" %}
+                    </div>
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.id_paciente layout="vertical" %}
+                    </div>
+                </div>
+                <div class="row p-4">
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.id_encuestador layout="vertical" %}
+                    </div>
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.medicion layout="vertical" %}
+                    </div>
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.institucion_salud layout="vertical" %}
+                    </div>
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.servicio_remitente layout="vertical" %}
+                    </div>
+                </div>
+                <div class="row p-4">
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.a1_ciudad layout="vertical" %}
+                    </div>
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.a2_barrio layout="vertical" %}
+                    </div>
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.a3_direccion layout="vertical" %}
+                    </div>
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.a4_edad layout="vertical" %}
+                    </div>
+                </div>
+                <div class="row p-4">
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.a5_estado_civil layout="vertical" %}
+                    </div>
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.a6_situacion_sentimental layout="vertical" %}
+                    </div>
+                    <div class="col-sm-3">
+                        {% bootstrap_field form.a7_escolaridad layout="vertical" %}
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+                <button type="button" class="btn btn-primary" data-target="#modal-default" onclick="setText()" type="button">Guardar</button>
+            </div>
+        </div>
+
+    <!-- Modal -->
+
+        <div class="modal" tabindex="-1" role="dialog"  id="modal-default">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Guardar cuestionario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p id="info_mostrar"> &hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" onclick="cerrarModal()">Registrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </form>
+{% endblock %}
+
+{% block js_block %}
+    {{ form.media.js }}
+
+    <script>
+        function setText() {
+            //Información a mostrar
+            document.getElementById("info_mostrar").innerHTML = "¿Está seguro que desea registrar el cuestionario?"
+            $("#modal-default").modal('toggle');
+        }
+
+        function cerrarModal() {
+            $("#modal-default .close").click()
+        }
+    </script>
+
+{% endblock %}
+
