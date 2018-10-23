@@ -50,6 +50,27 @@ class DatosMujeres(models.Model):
         ('5', 'Universidad')
     )
 
+    SI_NO_CHOICES = (
+        ('1', 'Si'),
+        ('2', 'No'),
+    )
+
+    DISCAPACIDAD_CHOICES = (
+        ('1', 'Motora'),
+        ('2', 'Visual'),
+        ('3', 'Mental'),
+        ('4', 'Auditiva'),
+        ('5', 'Del lenguaje')
+    )
+
+    SITUACION_LABORAL_CHOICES = (
+        ('1', 'Trabajo de tiempo completo'),
+        ('2', 'Trabajo de medio tiempo'),
+        ('3', 'Independiente'),
+        ('4', 'Estudia y no trabaja'),
+        ('5', 'Ni trabaja, ni estudia')
+    )
+
     hora_inicio = models.TimeField(default=datetime.now())
     hora_final = models.TimeField(default=datetime.now())
     fecha_encuesta = models.DateField(default=date.today)
@@ -65,5 +86,7 @@ class DatosMujeres(models.Model):
     a5_estado_civil = models.CharField(max_length=100, choices=ESTADO_CIVIL_CHOICES)
     a6_situacion_sentimental = models.CharField(max_length=100, choices=SITUACION_SENTIMENTAL_CHOICES)
     a7_escolaridad = models.CharField(max_length=100, choices=ESCOLARIDAD_CHOICES)
-
+    a8_discapacidad = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    a8a_tipo_discapacidad = models.CharField(max_length=100, choices=DISCAPACIDAD_CHOICES)
+    a9_situacion_laboral = models.CharField(max_length=100, choices=SITUACION_LABORAL_CHOICES)
 
