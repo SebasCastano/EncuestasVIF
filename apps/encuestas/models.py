@@ -71,6 +71,13 @@ class DatosMujeres(models.Model):
         ('5', 'Ni trabaja, ni estudia')
     )
 
+    TIPO_SUSTANCIA_CHOICES = (
+        ('1', 'Marihuana'),
+        ('2', 'Cocaína'),
+        ('3', 'Perico'),
+        ('4', 'Otro'),
+    )
+
     hora_inicio = models.TimeField(default=datetime.now())
     hora_final = models.TimeField(default=datetime.now())
     fecha_encuesta = models.DateField(default=date.today)
@@ -82,11 +89,19 @@ class DatosMujeres(models.Model):
     a1_ciudad = models.CharField(max_length=100, choices=CIUDAD_CHOICES)
     a2_barrio = models.CharField(max_length=100)
     a3_direccion = models.CharField(max_length=100)
-    a4_edad = models.IntegerField(null=True)
+    a4_edad = models.IntegerField()
     a5_estado_civil = models.CharField(max_length=100, choices=ESTADO_CIVIL_CHOICES)
     a6_situacion_sentimental = models.CharField(max_length=100, choices=SITUACION_SENTIMENTAL_CHOICES)
     a7_escolaridad = models.CharField(max_length=100, choices=ESCOLARIDAD_CHOICES)
     a8_discapacidad = models.CharField(max_length=100, choices=SI_NO_CHOICES)
     a8a_tipo_discapacidad = models.CharField(max_length=100, choices=DISCAPACIDAD_CHOICES)
     a9_situacion_laboral = models.CharField(max_length=100, choices=SITUACION_LABORAL_CHOICES)
+    a10_consume_cigarrillo = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    a11_consume_alcohol = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    a12_consume_tipo_sustancia = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    a12a_tipo_sustancia = models.CharField(max_length=100, choices=TIPO_SUSTANCIA_CHOICES)
+    a12b_otro_tipo_sustancia = models.CharField(max_length=100)
+    b1_num_personas_hogar = models.IntegerField()
+
+
 

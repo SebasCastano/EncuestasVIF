@@ -24,70 +24,105 @@
                 <h5 class="box-title text-letf">I. SECCIÓN A: IDENTIFICACION DE LA PARTICIPANTE</h5>
             </div>
             <div class="box-body ">
-                <div class="row p-4">
-                    <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.fecha_encuesta layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.hora_inicio layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.hora_final layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.id_paciente layout="vertical" %}
                     </div>
-                </div>
-                <div class="row p-4">
-                    <div class="col-sm-3">
+
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.id_encuestador layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.medicion layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.institucion_salud layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.servicio_remitente layout="vertical" %}
                     </div>
                 </div>
-                <div class="row p-4">
-                    <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.a1_ciudad layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.a2_barrio layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.a3_direccion layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.a4_edad layout="vertical" %}
                     </div>
-                </div>
-                <div class="row p-4">
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.a5_estado_civil layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.a6_situacion_sentimental layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.a7_escolaridad layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.a8_discapacidad layout="vertical" %}
                     </div>
-                </div>
-                <div class="row p-4">
-                    <div class="col-sm-3">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.a8a_tipo_discapacidad layout="vertical" %}
                     </div>
-                    <div class="col-sm-3">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
                         {% bootstrap_field form.a9_situacion_laboral layout="vertical" %}
                     </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a10_consume_cigarrillo layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a11_consume_alcohol layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a12_consume_tipo_sustancia layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a12a_tipo_sustancia layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a12b_otro_tipo_sustancia layout="vertical" %}
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+             <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">II. SECCIÓN B: CARACTERÍSTICAS SOCIO-ECONÓMICAS</h5>
+            </div>
+            <div class="box-body ">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.b1_num_personas_hogar layout="vertical" %}
+                    </div>
+                </div>
+
             </div>
             <div class="box-footer">
                 <button type="button" class="btn btn-primary" data-target="#modal-default" onclick="setText()" type="button">Guardar</button>

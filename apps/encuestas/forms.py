@@ -15,7 +15,8 @@ class AgregarEncuestaMujerForm(forms.ModelForm):
         model = DatosMujeres
         fields = ('hora_inicio', 'hora_final','fecha_encuesta', 'id_paciente', 'id_encuestador', 'medicion', 'institucion_salud',
                   'servicio_remitente', 'a1_ciudad', 'a2_barrio', 'a3_direccion', 'a4_edad', 'a5_estado_civil', 'a6_situacion_sentimental', 'a7_escolaridad',
-                  'a8_discapacidad', 'a8a_tipo_discapacidad', 'a9_situacion_laboral')
+                  'a8_discapacidad', 'a8a_tipo_discapacidad', 'a9_situacion_laboral', 'a10_consume_cigarrillo', 'a11_consume_alcohol', 'a12_consume_tipo_sustancia',
+                  'a12a_tipo_sustancia', 'a12b_otro_tipo_sustancia', 'b1_num_personas_hogar')
 
     widgets = {
         "medicion": Select2Widget(),
@@ -26,5 +27,10 @@ class AgregarEncuestaMujerForm(forms.ModelForm):
         "a7_escolaridad": Select2Widget(),
         "a8_discapacidad": Select2Widget(),
         "a8a_tipo_discapacidad": Select2Widget(),
-        "a9_situacion_laboral": Select2Widget()
+        "a9_situacion_laboral": Select2Widget(),
+        "a10_consume_cigarrillo": Select2Widget(),
+        "a11_consume_alcohol": Select2Widget(),
+        "a12_consume_tipo_sustancia": Select2Widget(),
+        "a12a_tipo_sustancia": Select2Widget(),
+        "a12b_otro_tipo_sustancia": Select2Widget()
     }
