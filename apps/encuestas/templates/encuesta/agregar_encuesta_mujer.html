@@ -122,11 +122,69 @@
                         {% bootstrap_field form.b1_num_personas_hogar layout="vertical" %}
                     </div>
                 </div>
+                <div class="row">
+                        <div class="col">
+                            <p class="text-left">B2 ¿Con quienes convive en su hogar?</p>
+                        </div>
+                    </div>
+                <div class="form-check">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_esposo layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_companero layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_hijos layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_sobrinos layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_primos layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_suegros layout="vertical" %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_ex_esposo layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_ex_companero layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_tios layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_hermanos layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_abuelos layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_conocidos layout="vertical" %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3">
+                            {% bootstrap_field form.b2_otro layout="vertical" %}
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            {% bootstrap_field form.b2_otro_especificado layout="vertical" %}
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="box-footer">
                 <button type="button" class="btn btn-primary" data-target="#modal-default" onclick="setText()" type="button">Guardar</button>
             </div>
+
+
+
         </div>
 
     <!-- Modal -->

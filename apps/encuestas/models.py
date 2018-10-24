@@ -102,6 +102,17 @@ class DatosMujeres(models.Model):
     a12a_tipo_sustancia = models.CharField(max_length=100, choices=TIPO_SUSTANCIA_CHOICES)
     a12b_otro_tipo_sustancia = models.CharField(max_length=100)
     b1_num_personas_hogar = models.IntegerField()
-
-
-
+    b2_esposo = models.BooleanField()
+    b2_companero = models.BooleanField()
+    b2_hijos = models.BooleanField()
+    b2_sobrinos = models.BooleanField()
+    b2_primos = models.BooleanField()
+    b2_suegros = models.BooleanField()
+    b2_ex_esposo = models.BooleanField()
+    b2_ex_companero = models.BooleanField()
+    b2_tios = models.BooleanField()
+    b2_hermanos = models.BooleanField()
+    b2_abuelos = models.BooleanField()
+    b2_conocidos = models.BooleanField()
+    b2_otro = models.BooleanField()
+    b2_otro_especificado = models.CharField(max_length=100)
