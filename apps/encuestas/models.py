@@ -75,7 +75,36 @@ class DatosMujeres(models.Model):
         ('1', 'Marihuana'),
         ('2', 'Cocaína'),
         ('3', 'Perico'),
-        ('4', 'Otro'),
+        ('4', 'Otro')
+    )
+
+    TIPO_VIVIENDA_CHOICES = (
+        ('1', 'Propia'),
+        ('2', 'Rentada/Alquilada'),
+        ('3', 'Prestada'),
+        ('4', 'Invadida')
+    )
+
+    TIPO_REGIMEN_SALUD_CHOICES  = (
+        ('1', 'Contributivo'),
+        ('2', 'Subsidiado'),
+        ('3', 'Vinculado'),
+        ('4', 'Otro')
+    )
+
+    TIPO_RELACION_AGRESOR_CHOICES = (
+        ('1', 'Pareja actual EN convivencia'),
+        ('2', 'Pareja actual SIN convivencia'),
+        ('3', 'Pareja anterior EN convivencia'),
+        ('4', 'Pareja anterior SIN convivencia'),
+        ('5', 'Otro')
+    )
+
+    ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES = (
+        ('0', 'Ninguna'),
+        ('1', 'Pocas veces'),
+        ('2', 'Varias veces'),
+        ('3', 'Muchas veces')
     )
 
     hora_inicio = models.TimeField(default=datetime.now())
@@ -116,3 +145,21 @@ class DatosMujeres(models.Model):
     b2_conocidos = models.BooleanField()
     b2_otro = models.BooleanField()
     b2_otro_especificado = models.CharField(max_length=100)
+    b3_num_personas_aportan_hogar = models.IntegerField()
+    b4_num_personas_dependen_dentro = models.IntegerField()
+    b4_num_personas_dependen_fuera = models.IntegerField()
+    b5_tipo_de_vivienda = models.CharField(max_length=100, choices=TIPO_VIVIENDA_CHOICES)
+    b6_regimen_salud = models.CharField(max_length=100, choices=TIPO_REGIMEN_SALUD_CHOICES)
+    b6_otro_especificado = models.CharField(max_length=100)
+    c1_relacion_agresor = models.CharField(max_length=100, choices=TIPO_RELACION_AGRESOR_CHOICES)
+    c1_otro_especificado = models.CharField(max_length=100)
+    d1_sentir_susto = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    d2_sentir_miedo = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    d3_sentir_desmayo = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    d4_sentir_nervios = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    d5_sentir_corazon = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    d6_sentir_tembladera = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    d7_sentir_tension = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    d8_dolor_cabeza = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    d9_sentir_terror = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    d10_sentir_agitada = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)

@@ -18,7 +18,7 @@
 {% endblock %}
 
 {% block content_block %}
-    <form role="form" method="post"> {% csrf_token %}
+    <form class="form" role="form-" method="post"> {% csrf_token %}
         <div class="form-group">
             <div class="box-header with-border p-3">
                 <h5 class="box-title text-letf">I. SECCIÓN A: IDENTIFICACION DE LA PARTICIPANTE</h5>
@@ -123,10 +123,15 @@
                     </div>
                 </div>
                 <div class="row">
-                        <div class="col">
-                            <p class="text-left">B2 ¿Con quienes convive en su hogar?</p>
-                        </div>
+                    <div class="col-md-12">
+                        <hr>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label class="text-left">B2 ¿Con quienes convive en su hogar?</label>
+                    </div>
+                </div>
                 <div class="form-check">
                     <div class="row">
                         <div class="col-md-2 col-sm-4">
@@ -172,13 +177,129 @@
                         <div class="col-md-2 col-sm-3">
                             {% bootstrap_field form.b2_otro layout="vertical" %}
                         </div>
-                        <div class="col-md-3 col-sm-3">
+                        <div class="col-md-3 col-sm-8">
                             {% bootstrap_field form.b2_otro_especificado layout="vertical" %}
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                        {% bootstrap_field form.b3_num_personas_aportan_hogar layout="vertical" %}
+                    </div>
+                    <div class="col-md-7 col-sm-12">
+                        <label class="text-left">B4 ¿Cuantas personas que depende de usted económicamente?</label>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                {% bootstrap_field form.b4_num_personas_dependen_dentro layout="vertical" %}
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                {% bootstrap_field form.b4_num_personas_dependen_fuera layout="vertical" %}
+                            </div>
+
+                        </div>
+                    </div>
+                 </div>
+                <div class="row">
+                     <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.b5_tipo_de_vivienda layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.b6_regimen_salud layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.b6_otro_especificado layout="vertical" %}
+                    </div>
+                </div>
 
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">SECCIÓN C: SALUD MENTAL - introducción</h5>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 bg-info">
+                        <p class="font-italic">
+                            Las siguientes preguntas son acerca de algunas de las situaciones que una persona puede haber sentido o vivido a lo largo de su vida.<br>
+                            Este cuestionario es parte de un protocolo, por eso puede incluir preguntas que pueden ser difíciles o incómodas para algunas personas.
+                            Recuerde que toda la información suministrada es confidencial y no se usarán datos personales que permitan identificar a la persona.
+                        </p>
+                    </div>
+                </div>
+            </div>
+             <div class="box-body ">
+                 <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <label class="text-left">C1 Usted está aquí porque ha experimentado algún tipo de agresión. Por favor indique cuál es su relación con la persona que la agredió.</label>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                {% bootstrap_field form.c1_relacion_agresor layout="vertical" %}
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                {% bootstrap_field form.c1_otro_especificado layout="vertical" %}
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+             </div>
+            <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">III. SECCIÓN D: SALUD MENTAL (HSCL-Ansiedad)</h5>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 bg-info">
+                        <p class="font-italic">
+                            Las siguientes preguntas son acerca de algunos síntomas que usted pudo o no haber experimentado.
+                            Para cada uno, diga por favor la frecuencia en que lo ha sentido en las últimas 4 semanas: muchas veces, varias veces, pocas veces o ninguna.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box-body ">
+                <div class="row">
+                     <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d1_sentir_susto layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d2_sentir_miedo layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-sm-12">
+                        {% bootstrap_field form.d3_sentir_desmayo layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d4_sentir_nervios layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d5_sentir_corazon layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d6_sentir_tembladera layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d7_sentir_tension layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d8_dolor_cabeza layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d9_sentir_terror layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d10_sentir_agitada layout="vertical" %}
+                    </div>
+                </div>
+            </div>
+
             <div class="box-footer">
                 <button type="button" class="btn btn-primary" data-target="#modal-default" onclick="setText()" type="button">Guardar</button>
             </div>
