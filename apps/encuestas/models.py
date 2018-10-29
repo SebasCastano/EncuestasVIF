@@ -107,6 +107,28 @@ class DatosMujeres(models.Model):
         ('3', 'Muchas veces')
     )
 
+    ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_CHOICES = (
+        ('4', 'Muy de acuerdo'),
+        ('3', 'De acuerdo'),
+        ('2', 'En desacuerdo'),
+        ('1', 'Muy en desacuerdo')
+    )
+
+    ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_INVERTIDA_CHOICES = (
+        ('1', 'Muy de acuerdo'),
+        ('2', 'De acuerdo'),
+        ('3', 'En desacuerdo'),
+        ('4', 'Muy en desacuerdo')
+    )
+
+    ESCALA_NINGUNA_A_EXTREMA_CHOICES = (
+        ('1', 'Ninguna'),
+        ('2', 'Leve'),
+        ('3', 'Moderada'),
+        ('4', 'Severa'),
+        ('5', 'Extrema/No puede hacerlo')
+    )
+
     hora_inicio = models.TimeField(default=datetime.now())
     hora_final = models.TimeField(default=datetime.now())
     fecha_encuesta = models.DateField(default=date.today)
@@ -163,3 +185,66 @@ class DatosMujeres(models.Model):
     d8_dolor_cabeza = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
     d9_sentir_terror = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
     d10_sentir_agitada = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    e1_digna_aprecio = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_CHOICES)
+    e2_cualidades_buenas = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_CHOICES)
+    e3_capaz_hacer_cosas = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_CHOICES)
+    e4_actitud_positiva = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_CHOICES)
+    e5_satisfecha = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_CHOICES)
+    e6_no_estar_orgullosa = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_INVERTIDA_CHOICES)
+    e7_inclino_fracasada = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_INVERTIDA_CHOICES)
+    e8_sentir_respesto_propio = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_INVERTIDA_CHOICES)
+    e9_pensar_ser_inutil = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_INVERTIDA_CHOICES)
+    e10_no_buena_persona = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_INVERTIDA_CHOICES)
+    f1_sentirse_sin_energia = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f2_culparse_por_algo = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f3_llorar_facilmente = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f4_perdida_sexual = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f5_poco_apetito = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f6_dificultad_dormir = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f7_sentir_sin_esperanza = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f8_sentirse_triste = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f9_sentirse_sola = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f10_pensar_acabar_vida = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f11_sentirse_atrapada = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f12_preocuparse_demasiado = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f13_no_sentir_interes = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f14_sentir_todo_cuesta = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    f15_sentir_no_valer = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    g1_pie_largo_periodo = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_EXTREMA_CHOICES)
+    g2_cumplir_quehaceres = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_EXTREMA_CHOICES)
+    g3_aprender_nueva_tarea = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_EXTREMA_CHOICES)
+    g4_mismo_nivel_otros = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_EXTREMA_CHOICES)
+    g5_afectacion_emocional = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_EXTREMA_CHOICES)
+    g6_concentrarse_algo = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_EXTREMA_CHOICES)
+    g7_caminar_distancias = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_EXTREMA_CHOICES)
+    g8_lavarse_cuerpo = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_EXTREMA_CHOICES)
+    g9_vestirse = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_EXTREMA_CHOICES)
+    g10_relacionarse_persona = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_EXTREMA_CHOICES)
+    g11_mantener_amistad = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_EXTREMA_CHOICES)
+    g12_trabajo_diario = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_EXTREMA_CHOICES)
+    h_evento1 = models.CharField(max_length=200)
+    h_evento2 = models.CharField(max_length=200)
+    h_evento3 = models.CharField(max_length=200)
+    h_evento4 = models.CharField(max_length=200)
+    h_evento5 = models.CharField(max_length=200)
+    h1_recuerdos_dolorosos = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h2_ocurrir_de_nuevo = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h3_suenos_desagradables = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h4_sentirse_distante = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h5_sentir_incapaz_amar = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h6_saltar_susto = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h7_dificultad_concentrarse = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h8_dificultad_dormir = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h9_sentirse_alerta = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h10_sentirse_irritable = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h11_evadir_situaciones = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h12_problemas_recordando = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h13_perder_interes = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h14_sentirse_sin_futuro = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h15_intentar_no_pensar = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h16_reacciones_fisicas = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h17_sentir_culpa = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    h_numero_evento = models.IntegerField()
+
+
+
