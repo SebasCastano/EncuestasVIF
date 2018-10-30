@@ -129,6 +129,22 @@ class DatosMujeres(models.Model):
         ('5', 'Extrema/No puede hacerlo')
     )
 
+    ESCALA_DEPENDENCIA_EMOCIAL_CHOICES = (
+        ('1', 'Completamente falso'),
+        ('2', 'Mayor parte falso'),
+        ('3', 'Ligeramente mas verdadero'),
+        ('4', 'Moderadamente verdadero'),
+        ('5', 'Mayor parte verdadero'),
+        ('6', 'Me describe perfectamente')
+    )
+
+    ESCALA_VIOLENCIA_CHOICES = (
+        ('1', 'Nunca'),
+        ('2', 'Una vez'),
+        ('3', 'Algunas veces'),
+        ('4', 'Muchas veces')
+    )
+
     hora_inicio = models.TimeField(default=datetime.now())
     hora_final = models.TimeField(default=datetime.now())
     fecha_encuesta = models.DateField(default=date.today)
@@ -245,6 +261,74 @@ class DatosMujeres(models.Model):
     h16_reacciones_fisicas = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
     h17_sentir_culpa = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
     h_numero_evento = models.IntegerField()
+    i1_sentirse_desamparada = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    i2_ser_abandonada_pareja = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    i3_deslumbrar_pareja = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    i4_centro_atencion_pareja = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    i5_necesitar_afecto = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    i6_angustia_enojo = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
+    i7_aungustia_ausencia_pareja = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i8_preocupacion_discucion_pareja = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i9_hacerse_dano_por_pareja = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i10_persona_debil_necesitada = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i11_necesidad_expresividad_pareja = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i12_ser_persona_especial = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i13_vacia_tras_discusion = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i14_sentirse_mal_sin_afecto = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i15_temor_por_abandono = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i16_dejar_todo_por_pareja = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i17_intranquila_paradero_pareja = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i18_vacia_sola = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i19_intolerancia_soledad = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i20_cosas_temerarias_por_amor = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i21_cambiar_planes_por_pareja = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i22_alejar_amigos_por_pareja = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    i23_diversion_pareja = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
+    j1_golpear_patear = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j2_tirar_romper = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j3_conducir_peligroso = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j4_tirar_objeto = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j5_senalar_dedo = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j6_intimidar_caras = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j7_amenazarla_puno = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j8_actuar_maton = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j9_destruirle_algo = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j10_amenazar_danar = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j11_amenazar_destruir_propiedad = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j12_amenazar_alguien_cercano = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j13_amenazar_hacerle_dano = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j14_amenazar_suicidarse = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j15_amenazar_matarla = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j16_amenazar_arma = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j17_amenazar_palos = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j18_actuar_querer_matarla = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j19_amenazar_cuchillo = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j20_agarrar_fuerte = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j21_aventarla_empujarla = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j22_agarrarla_repentina = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j23_estrujarla = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j24_aranarla_cortarla = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j25_harlarle_cabello = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j26_torcerle_brazo = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j27_azotarla = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j28_morderla = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j29_darle_cachetada_palma = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j30_darle_cachetada_dorso = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j31_abofetearla = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j32_golpearla_objeto = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j33_pegarle_puno = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j34_pegarle_patada = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j35_pisarla_fuerte = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j36_ahorcarla = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j37_quemarla = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j38_golpearla_garrote = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j39_lastimarla_arma = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j40_exigir_relaciones = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j41_obligarla_relaciones = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j42_relaciones_fuerta_bruta = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+    j43_usar_objeto_sexual = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
+
+
 
 
 

@@ -103,6 +103,72 @@ class AgregarEncuestaMujerForm(forms.ModelForm):
         self.fields['h17_sentir_culpa'].label = "H17 Sentir culpa"
         self.fields['h_numero_evento'].label = "¿Estos pensamientos o sentimientos que me acaba de describir son principalmente de cuál evento? (Leerle a la participante el listado de eventos que ella mencionó)."
         self.fields['h_numero_evento'].widget.attrs['placeholder'] = "Especifique número"
+        self.fields['i1_sentirse_desamparada'].label = "I1 Me siento desamparada cuando estoy sola"
+        self.fields['i2_ser_abandonada_pareja'].label = "I2 Me preocupa la idea de ser abandonada por mi pareja"
+        self.fields['i3_deslumbrar_pareja'].label = "I3 Para atraer a mi pareja busco deslumbrarlo o divertirlo"
+        self.fields['i4_centro_atencion_pareja'].label = "I4 Hago todo lo posible por ser el centro de atención en la vida de mi pareja"
+        self.fields['i5_necesitar_afecto'].label = "I5 Necesito constantemente expresiones de afecto de mi pareja"
+        self.fields['i6_angustia_enojo'].label = "I6 Si mi pareja no llama o no aparece a la hora acordada me angustia pensar que está enojado conmigo"
+        self.fields['i7_aungustia_ausencia_pareja'].label = "I7 Cuando mi pareja debe ausentarse por algunos días me siento angustiada"
+        self.fields['i8_preocupacion_discucion_pareja'].label = "I8 Cuando discuto con mi pareja me preocupa que deje de quererme"
+        self.fields['i9_hacerse_dano_por_pareja'].label = "I9 He amenazado con hacerme daño para que mi pareja no me deje"
+        self.fields['i10_persona_debil_necesitada'].label = "I10 Soy una persona necesitada y débil"
+        self.fields['i11_necesidad_expresividad_pareja'].label = "I11 Necesito demasiado que mi pareja sea expresiva conmigo"
+        self.fields['i12_ser_persona_especial'].label = "I12 Necesito tener a una persona para quien yo sea más especial que los demás"
+        self.fields['i13_vacia_tras_discusion'].label = "I13 Cuando tengo una discusión con mi pareja me siento vacía"
+        self.fields['i14_sentirse_mal_sin_afecto'].label = "I14 Me siento muy mal si mi pareja no me expresa constantemente el afecto"
+        self.fields['i15_temor_por_abandono'].label = "I15 Siento temor a que mi pareja me abandone"
+        self.fields['i16_dejar_todo_por_pareja'].label = "I16 Si mi pareja me propone un programa dejo todas las actividades que tenga para estar con él"
+        self.fields['i17_intranquila_paradero_pareja'].label = "I17 Si desconozco donde está mi pareja me siento intranquila"
+        self.fields['i18_vacia_sola'].label = "I18 Siento una fuerte sensación de vacío cuando estoy sola"
+        self.fields['i19_intolerancia_soledad'].label = "I19 No tolero la soledad"
+        self.fields['i20_cosas_temerarias_por_amor'].label = "I20 Soy capaz de hacer cosas temerarias, hasta arriesgar mi vida, por conservar el amor del otro"
+        self.fields['i21_cambiar_planes_por_pareja'].label = "I21 Si tengo planes y mi pareja aparece los cambio sólo por estar con él"
+        self.fields['i22_alejar_amigos_por_pareja'].label = "I22 Me alejo demasiado de mis amigos cuando tengo una relación de pareja"
+        self.fields['i23_diversion_pareja'].label = "I23 Me divierto solo cuando estoy con mi pareja"
+        self.fields['j1_golpear_patear'].label = "J1 Golpear o patear una pared, puerta o algún mueble"
+        self.fields['j2_tirar_romper'].label = "J2 Tirar, aplastar o romper un objeto"
+        self.fields['j3_conducir_peligroso'].label = "J3 Conducir de manera peligrosa con usted en la moto o carro"
+        self.fields['j4_tirar_objeto'].label = "J4 Tirarle algún objeto"
+        self.fields['j5_senalar_dedo'].label = "J5 Señalarla con el dedo autoritariamente"
+        self.fields['j6_intimidar_caras'].label = "J6 Intimidarla con gestos o caras amenazantes"
+        self.fields['j7_amenazarla_puno'].label = "J7 Amenazarla mostrándole el puño"
+        self.fields['j8_actuar_maton'].label = "J8 Actuar como un matón para intimidarla"
+        self.fields['j9_destruirle_algo'].label = "J9 Destruir algo que le pertenece a usted"
+        self.fields['j10_amenazar_danar'].label = "J10 Amenazarla con dañar  o dañar cosas que son importantes para usted"
+        self.fields['j11_amenazar_destruir_propiedad'].label = "J11 Amenazar con destruir su casa/propiedad"
+        self.fields['j12_amenazar_alguien_cercano'].label = "J12 Amenazar a alguien cercano a usted"
+        self.fields['j13_amenazar_hacerle_dano'].label = "J13 Amenazar con hacerle daño"
+        self.fields['j14_amenazar_suicidarse'].label = "J14 Amenazar con suicidarse"
+        self.fields['j15_amenazar_matarla'].label = "J15 Amenazar con matarla"
+        self.fields['j16_amenazar_arma'].label = "J16 Amenazarla con armas"
+        self.fields['j17_amenazar_palos'].label = "J17 Amenazarla con objetos como palos o garrotes"
+        self.fields['j18_actuar_querer_matarla'].label = "J18 Actuar como si quisiera matarla"
+        self.fields['j19_amenazar_cuchillo'].label = "J19 Amenazarla con un cuchillo o pistola"
+        self.fields['j20_agarrar_fuerte'].label = "J20 Agarrarla fuerte para que se quede en un lugar"
+        self.fields['j21_aventarla_empujarla'].label = "J21 Aventarla o empujarla a propósito"
+        self.fields['j22_agarrarla_repentina'].label = "J22 Agarrarla de manera repentina o con fuerza"
+        self.fields['j23_estrujarla'].label = "J23 Estrujarla"
+        self.fields['j24_aranarla_cortarla'].label = "J24 Arañarla o cortarla"
+        self.fields['j25_harlarle_cabello'].label = "J25 Halarle el cabello"
+        self.fields['j26_torcerle_brazo'].label = "J26 Torcerle un brazo"
+        self.fields['j27_azotarla'].label = "J27 Azotarla"
+        self.fields['j28_morderla'].label = "J28 Morderla"
+        self.fields['j29_darle_cachetada_palma'].label = "J29 Darle una cachetada con la palma de la mano"
+        self.fields['j30_darle_cachetada_dorso'].label = "J30 Darle una cachetada con el dorso de la mano"
+        self.fields['j31_abofetearla'].label = "J31 Abofetearla en la cara y cabeza"
+        self.fields['j32_golpearla_objeto'].label = "J32 Golpearla con un objeto"
+        self.fields['j33_pegarle_puno'].label = "J33 Pegarle puños"
+        self.fields['j34_pegarle_patada'].label = "J34 Pegarle patadas"
+        self.fields['j35_pisarla_fuerte'].label = "J35 Pisarla fuerte o brincado sobre usted"
+        self.fields['j36_ahorcarla'].label = "J36 Ahorcarla o sofocarla"
+        self.fields['j37_quemarla'].label = "J37 Quemarla con algo"
+        self.fields['j38_golpearla_garrote'].label = "J38 Golpearla con un palo o un garrote"
+        self.fields['j39_lastimarla_arma'].label = "J39 Lastimarla con un cuchillo o una pistola"
+        self.fields['j40_exigir_relaciones'].label = "J40 Exigirle que tengan relaciones sexuales sin importarle su opinión"
+        self.fields['j41_obligarla_relaciones'].label = "J41 Obligarla a tener relaciones sexuales en contra de su voluntad"
+        self.fields['j42_relaciones_fuerta_bruta'].label = "J42 Hacer que tengan relaciones sexuales usando la fuerza bruta"
+        self.fields['j43_usar_objeto_sexual'].label = "J43 Usar un objeto de manera sexual contra usted"
 
 
     class Meta:
@@ -132,4 +198,23 @@ class AgregarEncuestaMujerForm(forms.ModelForm):
                   'h4_sentirse_distante', 'h5_sentir_incapaz_amar', 'h6_saltar_susto', 'h7_dificultad_concentrarse',
                   'h8_dificultad_dormir', 'h9_sentirse_alerta', 'h10_sentirse_irritable', 'h11_evadir_situaciones',
                   'h12_problemas_recordando', 'h13_perder_interes', 'h14_sentirse_sin_futuro', 'h15_intentar_no_pensar',
-                  'h16_reacciones_fisicas', 'h17_sentir_culpa', 'h_numero_evento')
+                  'h16_reacciones_fisicas', 'h17_sentir_culpa', 'h_numero_evento', 'i1_sentirse_desamparada',
+                  'i2_ser_abandonada_pareja', 'i3_deslumbrar_pareja', 'i4_centro_atencion_pareja', 'i5_necesitar_afecto',
+                  'i6_angustia_enojo', 'i7_aungustia_ausencia_pareja', 'i8_preocupacion_discucion_pareja',
+                  'i9_hacerse_dano_por_pareja', 'i10_persona_debil_necesitada', 'i11_necesidad_expresividad_pareja',
+                  'i12_ser_persona_especial', 'i13_vacia_tras_discusion', 'i14_sentirse_mal_sin_afecto',
+                  'i15_temor_por_abandono', 'i16_dejar_todo_por_pareja', 'i17_intranquila_paradero_pareja',
+                  'i18_vacia_sola', 'i19_intolerancia_soledad', 'i20_cosas_temerarias_por_amor',
+                  'i21_cambiar_planes_por_pareja', 'i22_alejar_amigos_por_pareja', 'i23_diversion_pareja',
+                  'j1_golpear_patear', 'j2_tirar_romper', 'j3_conducir_peligroso', 'j4_tirar_objeto', 'j5_senalar_dedo',
+                  'j6_intimidar_caras', 'j7_amenazarla_puno', 'j8_actuar_maton', 'j9_destruirle_algo',
+                  'j10_amenazar_danar', 'j11_amenazar_destruir_propiedad', 'j12_amenazar_alguien_cercano',
+                  'j13_amenazar_hacerle_dano', 'j14_amenazar_suicidarse', 'j15_amenazar_matarla', 'j16_amenazar_arma',
+                  'j17_amenazar_palos', 'j18_actuar_querer_matarla', 'j19_amenazar_cuchillo', 'j20_agarrar_fuerte',
+                  'j21_aventarla_empujarla', 'j22_agarrarla_repentina', 'j23_estrujarla', 'j24_aranarla_cortarla',
+                  'j25_harlarle_cabello', 'j26_torcerle_brazo', 'j27_azotarla', 'j28_morderla', 'j29_darle_cachetada_palma',
+                  'j30_darle_cachetada_dorso', 'j31_abofetearla', 'j32_golpearla_objeto', 'j33_pegarle_puno',
+                  'j34_pegarle_patada', 'j35_pisarla_fuerte', 'j36_ahorcarla', 'j37_quemarla', 'j38_golpearla_garrote',
+                  'j39_lastimarla_arma', 'j40_exigir_relaciones', 'j41_obligarla_relaciones', 'j42_relaciones_fuerta_bruta',
+                  'j43_usar_objeto_sexual',
+                  )
