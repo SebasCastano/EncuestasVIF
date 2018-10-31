@@ -4,10 +4,15 @@ from django import forms
 
 
 class AgregarEncuestaMujerForm(forms.ModelForm):
+    opinion_dificultad_proceso = forms.CharField(widget=forms.Textarea, label="Por favor, indique brevemente si usted "
+    "tuvo algún tipo de dificultad para asistir a las consultas de psicología, trabajo social o apoyo psicosocial "
+    "durante su proceso de atención:")
+
+    opinion_atencion_terapia = forms.CharField(widget=forms.Textarea, label="Para finalizar, indique brevemente su "
+    "opinión sobre las terapias y apoyos recibidos durante su atención psicosocial.")
 
     def __init__(self, *args, **kwargs):
         super(AgregarEncuestaMujerForm, self).__init__(*args, **kwargs)
-
         self.fields['a4_edad'].widget.attrs['placeholder'] = "Edad en años cumplidos"
         self.fields['b2_otro_especificado'].widget.attrs['placeholder'] = "Especifique si marcó 'otro'"
         self.fields['b2_otro_especificado'].label = ""
@@ -169,7 +174,37 @@ class AgregarEncuestaMujerForm(forms.ModelForm):
         self.fields['j41_obligarla_relaciones'].label = "J41 Obligarla a tener relaciones sexuales en contra de su voluntad"
         self.fields['j42_relaciones_fuerta_bruta'].label = "J42 Hacer que tengan relaciones sexuales usando la fuerza bruta"
         self.fields['j43_usar_objeto_sexual'].label = "J43 Usar un objeto de manera sexual contra usted"
-
+        self.fields['k1_dolor_cabeza'].label = "K1 ¿Ha sufrido de dolores de cabeza?"
+        self.fields['k2_mal_apetito'].label = "K2 ¿Ha tenido mal apetito? "
+        self.fields['k3_mal_dormir'].label = "K3 ¿Ha dormido mal? "
+        self.fields['k4_facil_susto'].label = "K4 ¿Se asusta con facilidad o sin causa aparente? "
+        self.fields['k5_temblor_manos'].label = "K5 ¿Le tiemblan las manos? "
+        self.fields['k6_nervios_sin_causa'].label = "K6 ¿Se ha sentido nerviosa sin causa aparente? "
+        self.fields['k7_tensa_sin_causa'].label = "K7 ¿Se ha sentido tensa sin causa aparente? "
+        self.fields['k8_aburrida'].label = "K8 ¿Se ha sentido aburrida? "
+        self.fields['k9_mala_digestion'].label = "K9 ¿Ha sufrido de mala digestión? (Ej: Acidez, reflujo, estreñimiento, etc.)"
+        self.fields['k10_no_pensar_claro'].label = "K10 ¿No puede pensar con claridad? "
+        self.fields['k11_triste'].label = "K11 ¿Se ha sentido triste? "
+        self.fields['k12_no_disfrutar_diario'].label = "K12 ¿Ha tenido dificultad para disfrutar sus   actividades diarias? "
+        self.fields['k13_no_disfrutar_trabajo'].label = "K13 ¿Ha tenido dificultad para hacer su trabajo y/o actividades diarias? "
+        self.fields['k14_dicultad_decisiones'].label = "K14  ¿Ha tenido dificultad para tomar decisiones? "
+        self.fields['k15_acabar_vida'].label = "K15 ¿Ha tenido la idea de acabar con su vida? "
+        self.fields['k16_cansada_sin_razon'].label = "K16 ¿Se siente cansada sin razón aparente? "
+        self.fields['k17_sensacion_estomago'].label = "K17 ¿Ha tenido sensaciones desagradables en su estómago?  (Vacío, mariposas, vértigo)"
+        self.fields['k18_dificultad_diario'].label = "K18 ¿Se cansa con mucha facilidad al realizar sus actividades diarias? "
+        self.fields['k19_tratado_herirla'].label = "K19 ¿Siente que las personas han estado tratando de herirla en alguna forma? "
+        self.fields['k20_controlar_pensamientos'].label = "K20 ¿Ha notado que algo intenta controlar o interferir en sus pensamientos?"
+        self.fields['k21_escuchar_voces'].label = "K21 ¿Oye voces sin saber de dónde vienen o que otras personas no pueden oír?"
+        self.fields['k22_tener_convulsiones'].label = "K22 ¿Ha tenido convulsiones, ataques o caídas al suelo, con movimientos de brazos y piernas; con mordedura de la lengua o pérdida del conocimiento?"
+        self.fields['k23_llora_frecuentemente'].label = "K23 Soy alguien que llora con mucha frecuencia "
+        self.fields['k24_util_vida'].label = "K24 Soy incapaz de desempeñar un papel útil en la vida"
+        self.fields['k25_perdidad_interes'].label = "K25 Últimamente he perdido el interés en las cosas "
+        self.fields['k26_persona_inutil'].label = "K26 Siento que soy una persona inútil"
+        self.fields['k27_persona_importante'].label = "K27 Soy una persona más importante que todos los demás"
+        self.fields['opinion_dificultad_proceso'].widget.attrs['placeholder'] = "Comente.."
+        self.fields['opinion_atencion_terapia'].widget.attrs['placeholder'] = "Comente.."
+        self.fields['opinion_dificultad_proceso'].widget.attrs['style'] = "resize:none"
+        self.fields['opinion_atencion_terapia'].widget.attrs['style'] = "resize:none"
 
     class Meta:
         model = DatosMujeres
@@ -216,5 +251,16 @@ class AgregarEncuestaMujerForm(forms.ModelForm):
                   'j30_darle_cachetada_dorso', 'j31_abofetearla', 'j32_golpearla_objeto', 'j33_pegarle_puno',
                   'j34_pegarle_patada', 'j35_pisarla_fuerte', 'j36_ahorcarla', 'j37_quemarla', 'j38_golpearla_garrote',
                   'j39_lastimarla_arma', 'j40_exigir_relaciones', 'j41_obligarla_relaciones', 'j42_relaciones_fuerta_bruta',
-                  'j43_usar_objeto_sexual',
-                  )
+                  'j43_usar_objeto_sexual', 'k1_dolor_cabeza', 'k2_mal_apetito', 'k3_mal_dormir', 'k4_facil_susto',
+                  'k5_temblor_manos', 'k6_nervios_sin_causa', 'k7_tensa_sin_causa', 'k8_aburrida', 'k9_mala_digestion',
+                  'k10_no_pensar_claro', 'k11_triste', 'k12_no_disfrutar_diario', 'k13_no_disfrutar_trabajo',
+                  'k14_dicultad_decisiones', 'k15_acabar_vida', 'k16_cansada_sin_razon', 'k17_sensacion_estomago',
+                  'k18_dificultad_diario', 'k19_tratado_herirla', 'k20_controlar_pensamientos', 'k21_escuchar_voces',
+                  'k22_tener_convulsiones', 'k23_llora_frecuentemente', 'k24_util_vida', 'k25_perdidad_interes',
+                  'k26_persona_inutil', 'k27_persona_importante', 'opinion_dificultad_proceso',
+                  'opinion_atencion_terapia')
+
+    widgets = {
+        "opinion_dificultad_proceso": forms.Textarea,
+        "opinion_atencion_terapia": forms.Textarea
+    }

@@ -1,0 +1,19 @@
+[
+  {
+      "model": "auth.user",
+      "pk": "1",
+      "fields": {
+          "password": "pbkdf2_sha256$100000$NzYxpU3SrTBn$1ctUZ1OqHqYVtqTwB3iJLKeaWNfBVy6uDFq7TTJGdg4=",
+          "last_login": "2018-07-25 11:51:01.076592-05",
+          "is_superuser": "t",
+          "username": "admin",
+          "first_name": "Sebastian",
+          "last_name": "Castaño",
+          "email": "castano.sebastian@correounivalle.edu.co",
+          "is_staff": "f",
+          "is_active": "t",
+          "date_joined": "2018-10-31 11:58:46.489758-05",
+      }
+  }
+]
+

@@ -1,13 +1,15 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.contrib import messages
 from django.shortcuts import redirect
 # Create your views here.
 from apps.encuestas.forms import AgregarEncuestaMujerForm
 
-
+@login_required
 def index(request):
     return render(request, 'encuesta/index.html')
 
+@login_required
 def agregar_encuesta_mujer  (request):
     form = AgregarEncuestaMujerForm()
     if request.method == 'POST':

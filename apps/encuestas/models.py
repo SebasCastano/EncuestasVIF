@@ -121,6 +121,14 @@ class DatosMujeres(models.Model):
         ('4', 'Muy en desacuerdo')
     )
 
+    ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_CINCO_CHOICES = (
+        ('5', 'Muy de acuerdo'),
+        ('4', 'De acuerdo'),
+        ('3', 'Ni de acuerdo, ni en desacuerdo'),
+        ('2', 'En desacuerdo'),
+        ('1', 'Muy en desacuerdo')
+    )
+
     ESCALA_NINGUNA_A_EXTREMA_CHOICES = (
         ('1', 'Ninguna'),
         ('2', 'Leve'),
@@ -143,6 +151,14 @@ class DatosMujeres(models.Model):
         ('2', 'Una vez'),
         ('3', 'Algunas veces'),
         ('4', 'Muchas veces')
+    )
+
+    ESCALA_NUNCA_A_SIEMPRE_CHOICES = (
+        ('1', 'Nunca'),
+        ('2', 'Pocas veces'),
+        ('3', 'Algunas veces'),
+        ('4', 'Muchas veces'),
+        ('5', 'Siempre')
     )
 
     hora_inicio = models.TimeField(default=datetime.now())
@@ -327,8 +343,32 @@ class DatosMujeres(models.Model):
     j41_obligarla_relaciones = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
     j42_relaciones_fuerta_bruta = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
     j43_usar_objeto_sexual = models.CharField(max_length=100, choices=ESCALA_VIOLENCIA_CHOICES)
-
-
-
-
-
+    k1_dolor_cabeza = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k2_mal_apetito = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k3_mal_dormir = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k4_facil_susto = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k5_temblor_manos = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k6_nervios_sin_causa = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k7_tensa_sin_causa = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k8_aburrida = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k9_mala_digestion = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k10_no_pensar_claro = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k11_triste = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k12_no_disfrutar_diario = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k13_no_disfrutar_trabajo = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k14_dicultad_decisiones = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k15_acabar_vida = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k16_cansada_sin_razon = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k17_sensacion_estomago = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k18_dificultad_diario = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k19_tratado_herirla = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k20_controlar_pensamientos = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k21_escuchar_voces = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k22_tener_convulsiones = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
+    k23_llora_frecuentemente = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_CINCO_CHOICES)
+    k24_util_vida = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_CINCO_CHOICES)
+    k25_perdidad_interes = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_CINCO_CHOICES)
+    k26_persona_inutil = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_CINCO_CHOICES)
+    k27_persona_importante = models.CharField(max_length=100, choices=ESCALA_MUY_DEACUERDO_MUY_DESACUERDO_CINCO_CHOICES)
+    opinion_dificultad_proceso = models.CharField(max_length=400)
+    opinion_atencion_terapia = models.CharField(max_length=400)

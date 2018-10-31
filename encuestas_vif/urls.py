@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('encuestas/', include('apps.encuestas.urls')),
-    path('select2/', include('django_select2.urls')),
+    path('', include('apps.login.urls')),
+    path('select2/', include('django_select2.urls'))
 ]
 
 if settings.DEBUG:
