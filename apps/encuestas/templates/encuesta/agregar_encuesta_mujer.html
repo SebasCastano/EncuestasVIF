@@ -3,16 +3,14 @@
 {% load staticfiles %}
 
 
-{% block title_block %} Encuesta Mujer {% endblock %}
+{% block title_block %} Agregar Encuesta Mujer {% endblock %}
 
 
 
-{% block title_content_block %}Encuesta Mujeres - VIF{% endblock %}
+{% block title_content_block %}Agregar Encuesta Mujer - VIF{% endblock %}
 
 {% block css_block %}
 
-    <!-- Select2 -->
-    {{ form.media.css }}
     <link rel="stylesheet" href="{% static 'css/css_personalizados.css' %}">
 
 {% endblock %}
@@ -577,6 +575,7 @@
                                 <th scope="col">La mayor parte falso de mí</th>
                                 <th scope="col">Ligeramente más verdad que falso</th>
                                 <th scope="col">Moderadamente verdad de mí</th>
+                                <th scope="col">Mayor parte verdadero</th>
                                 <th scope="col">Me describe perfectamente</th>
                               </thead>
                               <tbody class="text-center">
@@ -585,6 +584,7 @@
                                 <th>3</th>
                                 <th>4</th>
                                 <th>5</th>
+                                <th>6</th>
                               </tbody>
 
                           </table>

@@ -1,4 +1,4 @@
-from .models import DatosMujeres
+from .models import DatosMujeres, DatosHombres
 from django_select2.forms import Select2Widget
 from django import forms
 
@@ -258,6 +258,197 @@ class AgregarEncuestaMujerForm(forms.ModelForm):
                   'k18_dificultad_diario', 'k19_tratado_herirla', 'k20_controlar_pensamientos', 'k21_escuchar_voces',
                   'k22_tener_convulsiones', 'k23_llora_frecuentemente', 'k24_util_vida', 'k25_perdidad_interes',
                   'k26_persona_inutil', 'k27_persona_importante', 'opinion_dificultad_proceso',
+                  'opinion_atencion_terapia')
+
+    widgets = {
+        "opinion_dificultad_proceso": forms.Textarea,
+        "opinion_atencion_terapia": forms.Textarea
+    }
+
+class AgregarEncuestaHombreForm(forms.ModelForm):
+    opinion_dificultad_proceso = forms.CharField(widget=forms.Textarea, label="Por favor, indique brevemente si usted "
+    "tuvo algún tipo de dificultad para asistir a las consultas de psicología, trabajo social o apoyo psicosocial "
+    "durante su proceso de atención:")
+
+    opinion_atencion_terapia = forms.CharField(widget=forms.Textarea, label="Para finalizar, indique brevemente su "
+    "opinión sobre las terapias y apoyos recibidos durante su atención psicosocial.")
+
+    def __init__(self, *args, **kwargs):
+        super(AgregarEncuestaHombreForm, self).__init__(*args, **kwargs)
+        self.fields['a4_edad'].widget.attrs['placeholder'] = "Edad en años cumplidos"
+        self.fields['b2_otro_especificado'].widget.attrs['placeholder'] = "Especifique si marcó 'otro'"
+        self.fields['b2_otro_especificado'].label = ""
+        self.fields['b2_esposo'].label = "Esposo"
+        self.fields['b2_companero'].label = "Compañero"
+        self.fields['b2_hijos'].label = "Hijos"
+        self.fields['b2_sobrinos'].label = "Sobrinos"
+        self.fields['b2_primos'].label = "Primos"
+        self.fields['b2_suegros'].label = "Suegros"
+        self.fields['b2_ex_esposo'].label = "Ex-esposo"
+        self.fields['b2_ex_companero'].label = "Ex-compañero"
+        self.fields['b2_tios'].label = "Tíos"
+        self.fields['b2_hermanos'].label = "Hermanos"
+        self.fields['b2_abuelos'].label = "Abuelos"
+        self.fields['b2_conocidos'].label = "Conocidos"
+        self.fields['b2_otro'].label = "Otro"
+        self.fields['b4_num_personas_dependen_dentro'].label = ""
+        self.fields['b4_num_personas_dependen_dentro'].widget.attrs['placeholder'] = "Dentro del hogar"
+        self.fields['b4_num_personas_dependen_fuera'].label = ""
+        self.fields['b4_num_personas_dependen_fuera'].widget.attrs['placeholder'] = "Fuera del hogar"
+        self.fields['b3_num_personas_aportan_hogar'].label = "B3 numero de persona que aportan en su hogar"
+        self.fields['c1_sentir_susto'].label = "D1 Sentirse asustada sin razón"
+        self.fields['c2_sentir_miedo'].label = "D2 Sentirse con miedo"
+        self.fields['c3_sentir_desmayo'].label = "D3 Sentirse con desmayos, mareos o debilidad"
+        self.fields['c4_sentir_nervios'].label = "D4 Sentirse nerviosa o con temblores"
+        self.fields['c5_sentir_corazon'].label = "D5 Sentir el corazón que se le quiere salir"
+        self.fields['c6_sentir_tembladera'].label = "D6 Sentir tembladera"
+        self.fields['c7_sentir_tension'].label = "D7 Sentirse tensa o rígida"
+        self.fields['c8_dolor_cabeza'].label = "D8 Estar con dolor de cabeza"
+        self.fields['c9_sentir_terror'].label = "D9 Tener sentimientos de terror o pánico"
+        self.fields['c10_sentir_agitada'].label = "D10 Sentirse agitada, como si no se pudiera quedar tranquila"
+        self.fields['d1_digna_aprecio'].label = "E1 Siento que soy digna de aprecio, al menos en igual medida que los demás"
+        self.fields['d2_cualidades_buenas'].label = "E2 Estoy convencida de que tengo cualidades buenas"
+        self.fields['d3_capaz_hacer_cosas'].label = "E3 Soy capaz de hacer las cosas tan bien como la mayoría de la gente"
+        self.fields['d4_actitud_positiva'].label = "E4 Tengo una actitud positiva hacia mí misma"
+        self.fields['d5_satisfecha'].label = "E5 En general estoy satisfecha de mí misma"
+        self.fields['d6_no_estar_orgullosa'].label = "E6 Siento que no tengo mucho de lo que estar orgullosa"
+        self.fields['d7_inclino_fracasada'].label = "E7  En general, me inclino a pensar que soy una fracasada"
+        self.fields['d8_sentir_respesto_propio'].label = "E8 Me gustaría sentir más respeto por mí misma"
+        self.fields['d9_pensar_ser_inutil'].label = "E9 Hay veces que realmente pienso que soy una inútil"
+        self.fields['d10_no_buena_persona'].label = "E10 A veces pienso que no soy buena persona"
+        self.fields['e1_sentirse_sin_energia'].label = "F1 Sentirse sin energía, como si estuviera lenta"
+        self.fields['e2_culparse_por_algo'].label = "F2 Culparse uno mismo por alguna cosa"
+        self.fields['e3_llorar_facilmente'].label = "F3 Llorar fácilmente "
+        self.fields['e4_perdida_sexual'].label = "F4 Pérdida de interés sexual"
+        self.fields['e5_poco_apetito'].label = "F5 Poco apetito"
+        self.fields['e6_dificultad_dormir'].label = "F6 Dificultad para quedarse dormida, permanecer dormida"
+        self.fields['e7_sentir_sin_esperanza'].label = "F7 Sentirse sin esperanza por el futuro"
+        self.fields['e8_sentirse_triste'].label = "F8 Sentirse triste"
+        self.fields['e9_sentirse_sola'].label = "F9 Sentirse sola"
+        self.fields['e10_pensar_acabar_vida'].label = "F10 Pensamientos de acabar con la vida propia"
+        self.fields['e11_sentirse_atrapada'].label = "F11 Sentirse atrapada o encarcelada"
+        self.fields['e12_preocuparse_demasiado'].label = "F12 Preocuparse demasiado por cosas"
+        self.fields['e13_no_sentir_interes'].label = "F13 No sentir interés por las cosas"
+        self.fields['e14_sentir_todo_cuesta'].label = "F14 Sentir que todo cuesta mucho esfuerzo"
+        self.fields['e15_sentir_no_valer'].label = "F15 Sentir que uno no vale nada"
+        self.fields['f_evento1'].label = "1."
+        self.fields['f_evento2'].label = "2."
+        self.fields['f_evento3'].label = "3."
+        self.fields['f_evento4'].label = "4."
+        self.fields['f_evento5'].label = "5."
+        self.fields['f1_recuerdos_dolorosos'].label = "H1 Recuerdos y pensamientos recurrentes sobre un evento doloroso"
+        self.fields['f2_ocurrir_de_nuevo'].label = "H2 Tener sentimientos como si algo que me ocurrió me fuera a ocurrir de nuevo"
+        self.fields['f3_suenos_desagradables'].label = "H3 Tener sueños desagradables sobre algo que ocurrió"
+        self.fields['f4_sentirse_distante'].label = "H4 Sentirse distante o alejada de otras personas"
+        self.fields['f5_sentir_incapaz_amar'].label = "H5 Sentir que no es capaz de amar a las personas cercanas a usted"
+        self.fields['f6_saltar_susto'].label = "H6 Sentir que fácilmente salta del susto o se siente nerviosa"
+        self.fields['f7_dificultad_concentrarse'].label = "H7 Tener dificultad para concentrarse"
+        self.fields['f8_dificultad_dormir'].label = "H8 Dificultad para quedarse dormida"
+        self.fields['f9_sentirse_alerta'].label = "H9 Sentirse muy alerta o prevenida"
+        self.fields['f10_sentirse_irritable'].label = "H10 Sentirse irritable o con arranques de rabia"
+        self.fields['f11_evadir_situaciones'].label = "H11 Intentar evadir situaciones o actividades que le recuerdan lo que le pasó"
+        self.fields['f12_problemas_recordando'].label = "H12 Tener problemas recordando cosas importantes de algo que ocurrió"
+        self.fields['f13_perder_interes'].label = "H13 Perder el interés en cosas que antes le gustaba hacer"
+        self.fields['f14_sentirse_sin_futuro'].label = "H14 Sentir como si no tuviera futuro"
+        self.fields['f15_intentar_no_pensar'].label = "H15 Intentar no pensar o hablar de algo que le ha ocurrido"
+        self.fields['f16_reacciones_fisicas'].label = "H16 Tener reacciones físicas o emocionales (se acelera el corazón, la respiración y sudoración) cuando algo le recuerda de algo que haya ocurrido"
+        self.fields['f17_sentir_culpa'].label = "H17 Sentir culpa"
+        self.fields['f_numero_evento'].label = "¿Estos pensamientos o sentimientos que me acaba de describir son principalmente de cuál evento? (Leerle a la participante el listado de eventos que ella mencionó)."
+        self.fields['f_numero_evento'].widget.attrs['placeholder'] = "Especifique número"
+        self.fields['h1_sentirse_desamparada'].label = "I1 Me siento desamparada cuando estoy sola"
+        self.fields['h2_ser_abandonada_pareja'].label = "I2 Me preocupa la idea de ser abandonada por mi pareja"
+        self.fields['h3_deslumbrar_pareja'].label = "I3 Para atraer a mi pareja busco deslumbrarlo o divertirlo"
+        self.fields['h4_centro_atencion_pareja'].label = "I4 Hago todo lo posible por ser el centro de atención en la vida de mi pareja"
+        self.fields['h5_necesitar_afecto'].label = "I5 Necesito constantemente expresiones de afecto de mi pareja"
+        self.fields['h6_angustia_enojo'].label = "I6 Si mi pareja no llama o no aparece a la hora acordada me angustia pensar que está enojado conmigo"
+        self.fields['h7_aungustia_ausencia_pareja'].label = "I7 Cuando mi pareja debe ausentarse por algunos días me siento angustiada"
+        self.fields['h8_preocupacion_discucion_pareja'].label = "I8 Cuando discuto con mi pareja me preocupa que deje de quererme"
+        self.fields['h9_hacerse_dano_por_pareja'].label = "I9 He amenazado con hacerme daño para que mi pareja no me deje"
+        self.fields['h10_persona_debil_necesitada'].label = "I10 Soy una persona necesitada y débil"
+        self.fields['h11_necesidad_expresividad_pareja'].label = "I11 Necesito demasiado que mi pareja sea expresiva conmigo"
+        self.fields['h12_ser_persona_especial'].label = "I12 Necesito tener a una persona para quien yo sea más especial que los demás"
+        self.fields['h13_vacia_tras_discusion'].label = "I13 Cuando tengo una discusión con mi pareja me siento vacía"
+        self.fields['h14_sentirse_mal_sin_afecto'].label = "I14 Me siento muy mal si mi pareja no me expresa constantemente el afecto"
+        self.fields['h15_temor_por_abandono'].label = "I15 Siento temor a que mi pareja me abandone"
+        self.fields['h16_dejar_todo_por_pareja'].label = "I16 Si mi pareja me propone un programa dejo todas las actividades que tenga para estar con él"
+        self.fields['h17_intranquila_paradero_pareja'].label = "I17 Si desconozco donde está mi pareja me siento intranquila"
+        self.fields['h18_vacia_sola'].label = "I18 Siento una fuerte sensación de vacío cuando estoy sola"
+        self.fields['h19_intolerancia_soledad'].label = "I19 No tolero la soledad"
+        self.fields['h20_cosas_temerarias_por_amor'].label = "I20 Soy capaz de hacer cosas temerarias, hasta arriesgar mi vida, por conservar el amor del otro"
+        self.fields['h21_cambiar_planes_por_pareja'].label = "I21 Si tengo planes y mi pareja aparece los cambio sólo por estar con él"
+        self.fields['h22_alejar_amigos_por_pareja'].label = "I22 Me alejo demasiado de mis amigos cuando tengo una relación de pareja"
+        self.fields['h23_diversion_pareja'].label = "I23 Me divierto solo cuando estoy con mi pareja"
+        self.fields['j1_dolor_cabeza'].label = "K1 ¿Ha sufrido de dolores de cabeza?"
+        self.fields['j2_mal_apetito'].label = "K2 ¿Ha tenido mal apetito? "
+        self.fields['j3_mal_dormir'].label = "K3 ¿Ha dormido mal? "
+        self.fields['j4_facil_susto'].label = "K4 ¿Se asusta con facilidad o sin causa aparente? "
+        self.fields['j5_temblor_manos'].label = "K5 ¿Le tiemblan las manos? "
+        self.fields['j6_nervios_sin_causa'].label = "K6 ¿Se ha sentido nerviosa sin causa aparente? "
+        self.fields['j7_tensa_sin_causa'].label = "K7 ¿Se ha sentido tensa sin causa aparente? "
+        self.fields['j8_aburrida'].label = "K8 ¿Se ha sentido aburrida? "
+        self.fields['j9_mala_digestion'].label = "K9 ¿Ha sufrido de mala digestión? (Ej: Acidez, reflujo, estreñimiento, etc.)"
+        self.fields['j10_no_pensar_claro'].label = "K10 ¿No puede pensar con claridad? "
+        self.fields['j11_triste'].label = "K11 ¿Se ha sentido triste? "
+        self.fields['j12_no_disfrutar_diario'].label = "K12 ¿Ha tenido dificultad para disfrutar sus   actividades diarias? "
+        self.fields['j13_no_disfrutar_trabajo'].label = "K13 ¿Ha tenido dificultad para hacer su trabajo y/o actividades diarias? "
+        self.fields['j14_dicultad_decisiones'].label = "K14  ¿Ha tenido dificultad para tomar decisiones? "
+        self.fields['j15_acabar_vida'].label = "K15 ¿Ha tenido la idea de acabar con su vida? "
+        self.fields['j16_cansada_sin_razon'].label = "K16 ¿Se siente cansada sin razón aparente? "
+        self.fields['j17_sensacion_estomago'].label = "K17 ¿Ha tenido sensaciones desagradables en su estómago?  (Vacío, mariposas, vértigo)"
+        self.fields['j18_dificultad_diario'].label = "K18 ¿Se cansa con mucha facilidad al realizar sus actividades diarias? "
+        self.fields['j19_tratado_herirla'].label = "K19 ¿Siente que las personas han estado tratando de herirla en alguna forma? "
+        self.fields['j20_controlar_pensamientos'].label = "K20 ¿Ha notado que algo intenta controlar o interferir en sus pensamientos?"
+        self.fields['j21_escuchar_voces'].label = "K21 ¿Oye voces sin saber de dónde vienen o que otras personas no pueden oír?"
+        self.fields['j22_tener_convulsiones'].label = "K22 ¿Ha tenido convulsiones, ataques o caídas al suelo, con movimientos de brazos y piernas; con mordedura de la lengua o pérdida del conocimiento?"
+        self.fields['j23_llora_frecuentemente'].label = "K23 Soy alguien que llora con mucha frecuencia "
+        self.fields['j24_util_vida'].label = "K24 Soy incapaz de desempeñar un papel útil en la vida"
+        self.fields['j25_perdidad_interes'].label = "K25 Últimamente he perdido el interés en las cosas "
+        self.fields['j26_persona_inutil'].label = "K26 Siento que soy una persona inútil"
+        self.fields['j27_persona_importante'].label = "K27 Soy una persona más importante que todos los demás"
+        self.fields['opinion_dificultad_proceso'].widget.attrs['placeholder'] = "Comente.."
+        self.fields['opinion_atencion_terapia'].widget.attrs['placeholder'] = "Comente.."
+        self.fields['opinion_dificultad_proceso'].widget.attrs['style'] = "resize:none"
+        self.fields['opinion_atencion_terapia'].widget.attrs['style'] = "resize:none"
+
+    class Meta:
+        model = DatosHombres
+        fields = ('hora_inicio', 'hora_final','fecha_encuesta', 'id_paciente', 'id_encuestador', 'medicion',
+                  'institucion_salud','servicio_remitente', 'a1_ciudad', 'a2_barrio', 'a3_direccion', 'a4_edad',
+                  'a5_estado_civil', 'a6_situacion_sentimental', 'a7_escolaridad', 'a8_discapacidad',
+                  'a8a_tipo_discapacidad', 'a9_situacion_laboral', 'a10_consume_cigarrillo', 'a11_consume_alcohol',
+                  'a12_consume_tipo_sustancia', 'a12a_tipo_sustancia', 'a12b_otro_tipo_sustancia', 'b1_num_personas_hogar',
+                  'b2_esposo', 'b2_companero', 'b2_hijos', 'b2_sobrinos', 'b2_primos','b2_suegros', 'b2_ex_esposo',
+                  'b2_ex_companero', 'b2_tios', 'b2_hermanos', 'b2_abuelos', 'b2_conocidos', 'b2_otro',
+                  'b2_otro_especificado', 'b3_num_personas_aportan_hogar', 'b4_num_personas_dependen_dentro',
+                  'b4_num_personas_dependen_fuera', 'b5_tipo_de_vivienda', 'b6_regimen_salud', 'b6_otro_especificado',
+                  'c1_sentir_susto', 'c2_sentir_miedo', 'c3_sentir_desmayo',
+                  'c4_sentir_nervios', 'c5_sentir_corazon', 'c6_sentir_tembladera', 'c7_sentir_tension', 'c8_dolor_cabeza',
+                  'c9_sentir_terror', 'c10_sentir_agitada', 'd1_digna_aprecio', 'd2_cualidades_buenas', 'd3_capaz_hacer_cosas',
+                  'd4_actitud_positiva', 'd5_satisfecha', 'd6_no_estar_orgullosa', 'd7_inclino_fracasada',
+                  'd8_sentir_respesto_propio', 'd9_pensar_ser_inutil', 'd10_no_buena_persona', 'e1_sentirse_sin_energia',
+                  'e2_culparse_por_algo', 'e3_llorar_facilmente', 'e4_perdida_sexual', 'e5_poco_apetito',
+                  'e6_dificultad_dormir', 'e7_sentir_sin_esperanza', 'e8_sentirse_triste', 'e9_sentirse_sola',
+                  'e10_pensar_acabar_vida', 'e11_sentirse_atrapada', 'e12_preocuparse_demasiado', 'e13_no_sentir_interes',
+                  'e14_sentir_todo_cuesta', 'e15_sentir_no_valer', 'f_evento1', 'f_evento2', 'f_evento3', 'f_evento4',
+                  'f_evento5', 'f1_recuerdos_dolorosos', 'f2_ocurrir_de_nuevo', 'f3_suenos_desagradables',
+                  'f4_sentirse_distante', 'f5_sentir_incapaz_amar', 'f6_saltar_susto', 'f7_dificultad_concentrarse',
+                  'f8_dificultad_dormir', 'f9_sentirse_alerta', 'f10_sentirse_irritable', 'f11_evadir_situaciones',
+                  'f12_problemas_recordando', 'f13_perder_interes', 'f14_sentirse_sin_futuro', 'f15_intentar_no_pensar',
+                  'f16_reacciones_fisicas', 'f17_sentir_culpa', 'f_numero_evento', 'h1_sentirse_desamparada',
+                  'h2_ser_abandonada_pareja', 'h3_deslumbrar_pareja', 'h4_centro_atencion_pareja', 'h5_necesitar_afecto',
+                  'h6_angustia_enojo', 'h7_aungustia_ausencia_pareja', 'h8_preocupacion_discucion_pareja',
+                  'h9_hacerse_dano_por_pareja', 'h10_persona_debil_necesitada', 'h11_necesidad_expresividad_pareja',
+                  'h12_ser_persona_especial', 'h13_vacia_tras_discusion', 'h14_sentirse_mal_sin_afecto',
+                  'h15_temor_por_abandono', 'h16_dejar_todo_por_pareja', 'h17_intranquila_paradero_pareja',
+                  'h18_vacia_sola', 'h19_intolerancia_soledad', 'h20_cosas_temerarias_por_amor',
+                  'h21_cambiar_planes_por_pareja', 'h22_alejar_amigos_por_pareja', 'h23_diversion_pareja',
+                  'j1_dolor_cabeza', 'j2_mal_apetito', 'j3_mal_dormir', 'j4_facil_susto',
+                  'j5_temblor_manos', 'j6_nervios_sin_causa', 'j7_tensa_sin_causa', 'j8_aburrida', 'j9_mala_digestion',
+                  'j10_no_pensar_claro', 'j11_triste', 'j12_no_disfrutar_diario', 'j13_no_disfrutar_trabajo',
+                  'j14_dicultad_decisiones', 'j15_acabar_vida', 'j16_cansada_sin_razon', 'j17_sensacion_estomago',
+                  'j18_dificultad_diario', 'j19_tratado_herirla', 'j20_controlar_pensamientos', 'j21_escuchar_voces',
+                  'j22_tener_convulsiones', 'j23_llora_frecuentemente', 'j24_util_vida', 'j25_perdidad_interes',
+                  'j26_persona_inutil', 'j27_persona_importante', 'opinion_dificultad_proceso',
                   'opinion_atencion_terapia')
 
     widgets = {

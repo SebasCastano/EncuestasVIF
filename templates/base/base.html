@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title_block %}Menu Base{% endblock %}</title>
+        <link rel="icon" href="{% static 'logo/icono.ico' %}">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
               integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -21,28 +22,38 @@
 
     </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-ligth shadow p-1">
-              <a class="navbar-brand" href="{% url 'index' %}">Encuentas VIF</a>
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Agregar Encuestas
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{% url 'agregar_encuesta_mujer' %}">Encuesta Mujer</a>
-                        <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Encuesta Hombre</a>
-                    </div>
-                  </li>
-                </ul>
-                <a class="text-italic btn btn-light" href="{% url 'login' %}">Cerrar Sesión</a>
-            </nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{% url 'index' %}">Encuentas VIF</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Encuesta Mujeres
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'agregar_encuesta_mujer' %}">Agregar</a>
+          <a class="dropdown-item" href="{% url 'consultar_encuesta_mujer' %}">Consultar</a>
+          <a class="dropdown-item" href="#">Modificar</a>
         </div>
-    </div>
-</div>
+      </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Encuesta Hombres
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'agregar_encuesta_hombre' %}">Agregar</a>
+          <a class="dropdown-item" href="{% url 'consultar_encuesta_hombre' %}">Consultar</a>
+          <a class="dropdown-item" href="#">Modificar</a>
+        </div>
+      </li>
+    </ul>
+    <a class="text-italic btn btn-light" href="{% url 'login' %}">Cerrar Sesión</a>
+  </div>
+</nav>
 
 <div class="container">
     <div class="box p-4 border border">

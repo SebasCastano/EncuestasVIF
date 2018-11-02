@@ -3,15 +3,795 @@
 {% load staticfiles %}
 
 
-{% block title_block %} Encuesta Hombre {% endblock %}
+{% block title_block %} Agregar Encuesta Hombre {% endblock %}
 
 
 
-{% block title_content_block %}Encuesta Hombre - VIF{% endblock %}
+{% block title_content_block %}Agregar Encuesta Hombre - VIF{% endblock %}
 
 {% block css_block %}
 
-    <!-- Select2 -->
-    {{ form.media.css }}
+    <link rel="stylesheet" href="{% static 'css/css_personalizados.css' %}">
 
 {% endblock %}
+
+{% block content_block %}
+    <form class="form" role="form-" method="post"> {% csrf_token %}
+        <div class="form-group">
+            <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">I. SECCIÓN A: IDENTIFICACION DE LA PARTICIPANTE</h5>
+            </div>
+            <div class="box-body ">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.fecha_encuesta layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.hora_inicio layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.hora_final layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.id_paciente layout="vertical" %}
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.id_encuestador layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.medicion layout="vertical" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.institucion_salud layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.servicio_remitente layout="vertical" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a1_ciudad layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a2_barrio layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a3_direccion layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a4_edad layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a5_estado_civil layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a6_situacion_sentimental layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a7_escolaridad layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a8_discapacidad layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a8a_tipo_discapacidad layout="vertical" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a9_situacion_laboral layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a10_consume_cigarrillo layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a11_consume_alcohol layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a12_consume_tipo_sustancia layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a12a_tipo_sustancia layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.a12b_otro_tipo_sustancia layout="vertical" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+             <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">II. SECCIÓN B: CARACTERÍSTICAS SOCIO-ECONÓMICAS</h5>
+            </div>
+            <div class="box-body ">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.b1_num_personas_hogar layout="vertical" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label class="text-left">B2 ¿Con quienes convive en su hogar?</label>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_esposo layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_companero layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_hijos layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_sobrinos layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_primos layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_suegros layout="vertical" %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_ex_esposo layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_ex_companero layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_tios layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_hermanos layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_abuelos layout="vertical" %}
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            {% bootstrap_field form.b2_conocidos layout="vertical" %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3">
+                            {% bootstrap_field form.b2_otro layout="vertical" %}
+                        </div>
+                        <div class="col-md-3 col-sm-8">
+                            {% bootstrap_field form.b2_otro_especificado layout="vertical" %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                        {% bootstrap_field form.b3_num_personas_aportan_hogar layout="vertical" %}
+                    </div>
+                    <div class="col-md-7 col-sm-12">
+                        <label class="text-left">B4 ¿Cuantas personas que depende de usted económicamente?</label>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                {% bootstrap_field form.b4_num_personas_dependen_dentro layout="vertical" %}
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                {% bootstrap_field form.b4_num_personas_dependen_fuera layout="vertical" %}
+                            </div>
+
+                        </div>
+                    </div>
+                 </div>
+                <div class="row">
+                     <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.b5_tipo_de_vivienda layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.b6_regimen_salud layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        {% bootstrap_field form.b6_otro_especificado layout="vertical" %}
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">III. SECCIÓN C: SALUD MENTAL (HSCL-Ansiedad)</h5>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 bg-info">
+                        <p class="font-italic">
+                            Las siguientes preguntas son acerca de algunos síntomas que usted pudo o no haber experimentado.
+                            Para cada uno, diga por favor la frecuencia en que lo ha sentido en las últimas 4 semanas: muchas veces, varias veces, pocas veces o ninguna.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box-body ">
+                <div class="row">
+                     <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.c1_sentir_susto layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.c2_sentir_miedo layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.c3_sentir_desmayo layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.c4_sentir_nervios layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.c5_sentir_corazon layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.c6_sentir_tembladera layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.c7_sentir_tension layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.c8_dolor_cabeza layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.c9_sentir_terror layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.c10_sentir_agitada layout="vertical" %}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">IV. SECCIÓN D: SALUD MENTAL (Autoestima Rosenberg)</h5>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 bg-info">
+                        <p class="font-italic">
+                            Las siguientes preguntas son para saber qué tan de acuerdo o en desacuerdo está usted con las siguientes afirmaciones.
+                            Para responder las preguntas, piense en cómo se ha sentido en las últimas 4 semanas:
+                        </p>
+                    </div>
+                </div>
+            </div>
+             <div class="box-body ">
+                <div class="row">
+                     <div class="col-md-7 col-sm-12">
+                        {% bootstrap_field form.d1_digna_aprecio layout="vertical" %}
+                    </div>
+                    <div class="col-md-5 col-sm-12">
+                        {% bootstrap_field form.d2_cualidades_buenas layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d3_capaz_hacer_cosas layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d4_actitud_positiva layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d5_satisfecha layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d6_no_estar_orgullosa layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d7_inclino_fracasada layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d8_sentir_respesto_propio layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d9_pensar_ser_inutil layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.d10_no_buena_persona layout="vertical" %}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">V. SECCIÓN E: SALUD MENTAL (HSCL - Depresión)</h5>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 bg-info">
+                        <p class="font-italic">
+                            Las siguientes preguntas son acerca de algunos síntomas que usted pudo o no haber
+                            experimentado. Para cada uno diga por favor la frecuencia en que lo ha sentido en las
+                            últimas 4 semanas: muchas veces, varias veces, pocas veces, ninguna.
+                        </p>
+                    </div>
+                </div>
+            </div>
+             <div class="box-body ">
+                <div class="row">
+                     <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e1_sentirse_sin_energia layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e2_culparse_por_algo layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e3_llorar_facilmente layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e4_perdida_sexual layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e5_poco_apetito layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e6_dificultad_dormir layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e7_sentir_sin_esperanza layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e8_sentirse_triste layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e9_sentirse_sola layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e10_pensar_acabar_vida layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e11_sentirse_atrapada layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e12_preocuparse_demasiado layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e13_no_sentir_interes layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e14_sentir_todo_cuesta layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.e15_sentir_no_valer layout="vertical" %}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">VI. SECCIÓN F: SALUD MENTAL  - HTQ(Harvard Trauma Questionnaire – Symptoms Questions)</h5>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 bg-info">
+                        <p class="font-italic">
+                            Por favor, realice un listado de los 5 eventos traumáticos más impactantes a lo largo de su vida.
+                            Siendo el 1 el de Mayor impacto y 5 el de Menor impacto.
+                        </p>
+                        {% bootstrap_field form.f_evento1 layout="inline" %}
+                        {% bootstrap_field form.f_evento2 layout="inline" %}
+                        {% bootstrap_field form.f_evento3 layout="inline" %}
+                        {% bootstrap_field form.f_evento4 layout="inline" %}
+                        {% bootstrap_field form.f_evento5 layout="inline" %}
+                        <p class="font-italic">
+                            Las siguientes preguntas son acerca de algunos síntomas que usted pudo o no haber
+                            experimentado. Para cada uno diga por favor la frecuencia en que lo ha sentido en las
+                            últimas 4 semanas: muchas veces, varias veces, pocas veces, ninguna.
+                        </p>
+                    </div>
+                </div>
+            </div>
+             <div class="box-body ">
+                <div class="row">
+                     <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.f1_recuerdos_dolorosos layout="vertical" %}
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.f2_ocurrir_de_nuevo layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.f3_suenos_desagradables layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.f4_sentirse_distante layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.f5_sentir_incapaz_amar layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.f6_saltar_susto layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.f7_dificultad_concentrarse layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.f8_dificultad_dormir layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.f9_sentirse_alerta layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.f10_sentirse_irritable layout="vertical" %}
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.f11_evadir_situaciones layout="vertical" %}
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.f12_problemas_recordando layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.f13_perder_interes layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.f14_sentirse_sin_futuro layout="vertical" %}
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.f15_intentar_no_pensar layout="vertical" %}
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.f16_reacciones_fisicas layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.f17_sentir_culpa layout="vertical" %}
+                    </div>
+                    <div class="col-md-12">
+                        {% bootstrap_field form.f_numero_evento layout="vertical" %}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">VIII. SECCIÓN H: SALUD MENTAL - Dependencia Emocional</h5>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 bg-info">
+                        <p class="font-italic">
+                            Para las siguientes preguntas, tenga en cuenta la siguiente escala:
+                        </p>
+
+                        <div class="table-responsive-lg">
+                          <table class="table table-bordered">
+                              <thead class="text-center">
+                                <th scope="col">Completamente Falso</th>
+                                <th scope="col">La mayor parte falso de mí</th>
+                                <th scope="col">Ligeramente más verdad que falso</th>
+                                <th scope="col">Moderadamente verdad de mí</th>
+                                <th scope="col">Mayor parte verdadero</th>
+                                <th scope="col">Me describe perfectamente</th>
+                              </thead>
+                              <tbody class="text-center">
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                                <th>6</th>
+                              </tbody>
+
+                          </table>
+                        </div>
+                    </div>
+                    <div class="col-md-10 bg-info">
+                        <p class="font-italic">
+                            Escoja el puntaje de 1 a 6 que mejor la describa así misma respecto a sus relaciones de pareja:
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box-body ">
+                <div class="row">
+                     <div class="col-md-5 col-sm-12">
+                        {% bootstrap_field form.h1_sentirse_desamparada layout="vertical" %}
+                    </div>
+                    <div class="col-md-7 col-sm-12">
+                        {% bootstrap_field form.h2_ser_abandonada_pareja layout="vertical" %}
+                    </div>
+                    <div class="col-md-5 col-sm-12">
+                        {% bootstrap_field form.h3_deslumbrar_pareja layout="vertical" %}
+                    </div>
+                    <div class="col-md-7 col-sm-12">
+                        {% bootstrap_field form.h4_centro_atencion_pareja layout="vertical" %}
+                    </div>
+                    <div class="col-md-5 col-sm-12">
+                        {% bootstrap_field form.h5_necesitar_afecto layout="vertical" %}
+                    </div>
+                    <div class="col-md-7 col-sm-12">
+                        {% bootstrap_field form.h6_angustia_enojo layout="vertical" %}
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.h7_aungustia_ausencia_pareja layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.h8_preocupacion_discucion_pareja layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.h9_hacerse_dano_por_pareja layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.h10_persona_debil_necesitada layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.h11_necesidad_expresividad_pareja layout="vertical" %}
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.h12_ser_persona_especial layout="vertical" %}
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.h13_vacia_tras_discusion layout="vertical" %}
+                    </div>
+                    <div class="col-md-7 col-sm-12">
+                        {% bootstrap_field form.h14_sentirse_mal_sin_afecto layout="vertical" %}
+                    </div>
+                    <div class="col-md-5 col-sm-12">
+                        {% bootstrap_field form.h15_temor_por_abandono layout="vertical" %}
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.h16_dejar_todo_por_pareja layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.h17_intranquila_paradero_pareja layout="vertical" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.h18_vacia_sola layout="vertical" %}
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        {% bootstrap_field form.h19_intolerancia_soledad layout="vertical" %}
+                    </div>
+                    <div class="col-md-8 col-sm-12">
+                        {% bootstrap_field form.h20_cosas_temerarias_por_amor layout="vertical" %}
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.h21_cambiar_planes_por_pareja layout="vertical" %}
+                    </div>
+                    <div class="col-md-7 col-sm-12">
+                        {% bootstrap_field form.h22_alejar_amigos_por_pareja layout="vertical" %}
+                    </div>
+                    <div class="col-md-5 col-sm-12">
+                        {% bootstrap_field form.h23_diversion_pareja layout="vertical" %}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">X. SECCIÓN J: SALUD MENTAL  - SRQ Likert</h5>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 bg-info">
+                        <p class="font-italic">
+                            Para responder las siguientes preguntas, por favor piense que tan frecuentemente le han
+                            sucedido las situaciones o frases descritas durante las últimas 4 semanas. Las respuestas
+                            van desde “Nunca en las últimas 4 semanas” hasta “Siempre durante las últimas 4 semanas.”
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box-body ">
+                <div class="row">
+                     <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j1_dolor_cabeza layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j2_mal_apetito layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j3_mal_dormir layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j4_facil_susto layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j5_temblor_manos layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j6_nervios_sin_causa layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j7_tensa_sin_causa layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j8_aburrida layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j9_mala_digestion layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j10_no_pensar_claro layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j11_triste layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j12_no_disfrutar_diario layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j13_no_disfrutar_trabajo layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j14_dicultad_decisiones layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j15_acabar_vida layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j16_cansada_sin_razon layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j17_sensacion_estomago layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j18_dificultad_diario layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j19_tratado_herirla layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j20_controlar_pensamientos layout="vertical" %}
+                     </div>
+                    <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.j21_escuchar_voces layout="vertical" %}
+                     </div>
+                    <div class="col-md-12 col-sm-12">
+                        {% bootstrap_field form.j22_tener_convulsiones layout="vertical" %}
+                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 bg-info">
+                        <p class="font-italic">
+                            Las siguientes preguntas son para saber qué tan de acuerdo o en desacuerdo está usted con
+                            las siguientes afirmaciones. De nuevo, piense en cómo se ha sentido en las últimas 4 semanas:
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j23_llora_frecuentemente layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j24_util_vida layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j25_perdidad_interes layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j26_persona_inutil layout="vertical" %}
+                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% bootstrap_field form.j27_persona_importante layout="vertical" %}
+                     </div>
+                </div>
+
+            </div>
+            <div class="box-footer">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 bg-warning">
+                        <p class="font-italic">
+                            <strong>NOTA PARA EL ENCUESTADOR: SALTO</strong> <br> En los casos que esta encuesta
+                            corresponda a la Medición 1 (Línea de Base) SALTAR este numeral XII e ir directamente al
+                            final del cuestionario, Numeral XIII.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="box-header with-border p-3">
+                <h5 class="box-title text-letf">XI. OPINIONES SOBRE EL PROCESO DE ATENCIÓN PSICOSOCIAL</h5>
+            </div>
+            <div class="box-body ">
+                <div class="row">
+                     <div class="col-md-12">
+                        {% bootstrap_field form.opinion_dificultad_proceso layout="vertical" %}
+                     </div>
+                    <div class="col-md-12">
+                        {% bootstrap_field form.opinion_atencion_terapia layout="vertical" %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10">
+                        <p class="font-italic text-center text-info">
+                            <strong>CON ESTO FINALIZA EL CUESTIONARIO, MUCHAS GRACIAS POR SU COLABORACION</strong> <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" data-target="#modal-default" onclick="setText()" type="button">Guardar</button>
+            </div>
+
+
+
+        </div>
+
+    <!-- Modal -->
+
+        <div class="modal" tabindex="-1" role="dialog"  id="modal-default">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Guardar cuestionario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p id="info_mostrar"> &hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" onclick="cerrarModal()">Registrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </form>
+{% endblock %}
+
+{% block js_block %}
+    {{ form.media.js }}
+
+    <script>
+        function setText() {
+            //Información a mostrar
+            document.getElementById("info_mostrar").innerHTML = "¿Está seguro que desea registrar el cuestionario?"
+            $("#modal-default").modal('toggle');
+        }
+
+        function cerrarModal() {
+            $("#modal-default .close").click()
+        }
+    </script>
+
+{% endblock %}
+

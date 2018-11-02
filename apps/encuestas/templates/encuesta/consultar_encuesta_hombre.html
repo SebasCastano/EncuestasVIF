@@ -1,0 +1,73 @@
+{% extends 'base/base.html' %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+
+{% block title_block %} Consultar Encuesta Hombre {% endblock %}
+
+
+
+{% block title_content_block %}Consultar Encuesta Hombre - VIF {% endblock %}
+
+{% block css_block %}
+    
+    <link rel="stylesheet" href="{% static 'css/css_personalizados.css' %}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+{% endblock %}
+
+{% block content_block %}
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 ">
+            <div class="table-responsive-lg">
+                <table id="myTable" class="table table-striped">
+                  <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Encuestador</th>
+                        <th scope="col">Paciente</th>
+                        <th scope="col">Medicion</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      {% for dato in datos %}
+                          <tr>
+                              <th scope="row">{{ contador }}</th>
+                              <td> {{ dato.fecha_encuesta }}</td>
+                              <td> {{ dato.id_encuestador }}</td>
+                              <td> {{ dato.id_paciente }}</td>
+                              <td> {{ dato.medicion }}</td>
+                              <td><a href="{% url 'modificar_empleado' dato.id %}"
+                                       class="btn btn-block btn-primary btn-sm">Modificar</a></td>
+                          </tr>
+                          {{ contador|add:1}}
+                        {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+
+{% block js_block %}
+
+    <!-- DataTables -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <script>
+    $(function () {
+        $('#myTable').DataTable(
+            {
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+                    }
+                }
+        );
+    } );
+    </script>
+{% endblock %}
