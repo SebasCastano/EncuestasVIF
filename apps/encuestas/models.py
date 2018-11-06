@@ -52,7 +52,7 @@ class DatosMujeres(models.Model):
 
     SI_NO_CHOICES = (
         ('1', 'Si'),
-        ('2', 'No'),
+        ('0', 'No'),
     )
 
     DISCAPACIDAD_CHOICES = (
@@ -421,7 +421,7 @@ class DatosHombres(models.Model):
 
     SI_NO_CHOICES = (
         ('1', 'Si'),
-        ('2', 'No'),
+        ('0', 'No'),
     )
 
     DISCAPACIDAD_CHOICES = (
@@ -520,6 +520,13 @@ class DatosHombres(models.Model):
         ('3', 'Algunas veces'),
         ('4', 'Muchas veces'),
         ('5', 'Siempre')
+    )
+
+    ESCALA_NINGUNA_A_CASI_SIEMPRE = (
+        ('0', 'Nunca'),
+        ('1', 'A veces'),
+        ('2', 'A menudo'),
+        ('3', 'Casi siempre')
     )
 
     hora_inicio = models.TimeField(default=datetime.now())
@@ -624,7 +631,38 @@ class DatosHombres(models.Model):
     f16_reacciones_fisicas = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
     f17_sentir_culpa = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
     f_numero_evento = models.IntegerField()
-    ''' MULTICAGE SECCION G NUEVO'''
+    g1_beber_menos = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g2_criticar_beber = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g3_culpable_beber = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g4_beber_manana = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g5_reducir_juego = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g6_ocultar_juego = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g7_problemas_juego = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g8_impulsado_juego = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g9_menos_drogas = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g10_niega_drogas = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g11_problema_psicologico_drogas = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g12_impulsado_drogas = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g13_vomito_evitar_engordar = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g14_perder_control_comida = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g15_creer_gordo = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g16_obsesionado_comida = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g17_tiempo_internet = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g18_quejas_internet = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g19_alejar_internet = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g20_controlar_internet = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g21_tiempo_videojuegos = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g22_quejar_videojuegos = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g23_dias_sin_videojuegos = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g24_reducir_tiempo_videojuegos = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g25_impulso_comprar = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g26_problemas_gastos = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g27_problemas_credito = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g28_reducir_gastos = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g29_sexo_impedir_obligaciones = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g30_quejas_actividad_sexual = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g31_excesiva_actividad_sexual = models.CharField(max_length=100, choices=SI_NO_CHOICES)
+    g32_moderar_actividad_sexual = models.CharField(max_length=100, choices=SI_NO_CHOICES)
     h1_sentirse_desamparada = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
     h2_ser_abandonada_pareja = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
     h3_deslumbrar_pareja = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_MUCHAS_VECES_CHOICES)
@@ -648,7 +686,21 @@ class DatosHombres(models.Model):
     h21_cambiar_planes_por_pareja = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
     h22_alejar_amigos_por_pareja = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
     h23_diversion_pareja = models.CharField(max_length=100, choices=ESCALA_DEPENDENCIA_EMOCIAL_CHOICES)
-    '''PLUTCHIK SECCION i NUEVO'''
+    i1_dificil_esperar_cola = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i2_cosas_impulsivas = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i3_dinero_impulsivo = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i4_planear_anticipacion = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i5_perder_paciencia = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i6_facil_concentrarse = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i7_impulsos_sexuales = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i8_decir_primero_cabeza = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i9_comer_sin_hambre = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i10_impulsivo = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i11_terminar_cosas_empieza = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i12_dificil_control_emociones = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i13_distraerse_facilmente = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i14_dificil_quieto = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
+    i15_cauteloso = models.CharField(max_length=100, choices=ESCALA_NINGUNA_A_CASI_SIEMPRE)
     j1_dolor_cabeza = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
     j2_mal_apetito = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)
     j3_mal_dormir = models.CharField(max_length=100, choices=ESCALA_NUNCA_A_SIEMPRE_CHOICES)

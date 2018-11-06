@@ -13,6 +13,11 @@ class AgregarEncuestaMujerForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(AgregarEncuestaMujerForm, self).__init__(*args, **kwargs)
+        self.fields['a12a_tipo_sustancia'].widget.attrs['disabled'] = True
+        self.fields['a12b_otro_tipo_sustancia'].widget.attrs['disabled'] = True
+        self.fields['b2_otro_especificado'].widget.attrs['disabled'] = True
+        self.fields['b6_otro_especificado'].widget.attrs['disabled'] = True
+        self.fields['c1_otro_especificado'].widget.attrs['disabled'] = True
         self.fields['a4_edad'].widget.attrs['placeholder'] = "Edad en años cumplidos"
         self.fields['b2_otro_especificado'].widget.attrs['placeholder'] = "Especifique si marcó 'otro'"
         self.fields['b2_otro_especificado'].label = ""
@@ -275,6 +280,10 @@ class AgregarEncuestaHombreForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(AgregarEncuestaHombreForm, self).__init__(*args, **kwargs)
+        self.fields['a12a_tipo_sustancia'].widget.attrs['disabled'] = True
+        self.fields['a12b_otro_tipo_sustancia'].widget.attrs['disabled'] = True
+        self.fields['b2_otro_especificado'].widget.attrs['disabled'] = True
+        self.fields['b6_otro_especificado'].widget.attrs['disabled'] = True
         self.fields['a4_edad'].widget.attrs['placeholder'] = "Edad en años cumplidos"
         self.fields['b2_otro_especificado'].widget.attrs['placeholder'] = "Especifique si marcó 'otro'"
         self.fields['b2_otro_especificado'].label = ""
@@ -355,6 +364,38 @@ class AgregarEncuestaHombreForm(forms.ModelForm):
         self.fields['f17_sentir_culpa'].label = "H17 Sentir culpa"
         self.fields['f_numero_evento'].label = "¿Estos pensamientos o sentimientos que me acaba de describir son principalmente de cuál evento? (Leerle a la participante el listado de eventos que ella mencionó)."
         self.fields['f_numero_evento'].widget.attrs['placeholder'] = "Especifique número"
+        self.fields['g1_beber_menos'].label = "G1 ¿Ha pensado alguna vez que debería beber menos?"
+        self.fields['g2_criticar_beber'].label = "G2 ¿Se ha sentido molesto cuando alguna persona le ha criticado su manera o forma de beber?"
+        self.fields['g3_culpable_beber'].label = "G3¿Se ha sentido culpable alguna vez por su manera o forma de beber?"
+        self.fields['g4_beber_manana'].label = "G4 ¿Alguna vez lo primero que ha hecho por la mañana es beber alguna bebida alcohólica  para relajarse o para eliminar el guayabo?"
+        self.fields['g5_reducir_juego'].label = "G5 ¿Ha tenido usted la sensación de que debería reducir su conducta de juego? (Apuestas, chances, casinos)"
+        self.fields['g6_ocultar_juego'].label = "G6 ¿Niega u oculta su verdadera conducta de juego para que los demás no lo critiquen sobre sus supuestos excesos?"
+        self.fields['g7_problemas_juego'].label = "G7 ¿Ha tenido usted problemas psicológicos, familiares, económicos o laborales a causa del juego?"
+        self.fields['g8_impulsado_juego'].label = "G8 ¿Se siente con frecuencia impulsado irremediablemente a jugar (Apuestas, chances, casinos) a pesar de sus problemas?"
+        self.fields['g9_menos_drogas'].label = "G9 ¿Ha pensado alguna vez que debería usted consumir menos drogas?"
+        self.fields['g10_niega_drogas'].label = "G10 ¿Niega usted su consumo de drogas a familiares, amigos o compañeros para evitar que lo critiquen?"
+        self.fields['g11_problema_psicologico_drogas'].label = "G11 ¿Ha tenido usted problemas psicológicos, económicos, laborales o familiares a causa de su consumo de drogas?"
+        self.fields['g12_impulsado_drogas'].label = "G12 ¿Se siente a veces impulsado a consumir drogas aunque haya decidido no hacerlo?"
+        self.fields['g13_vomito_evitar_engordar'].label = "G13 ¿Alguna vez se ha provocado el vómito para evitar engordar?"
+        self.fields['g14_perder_control_comida'].label = "G14 ¿Le preocupa que haya perdido el control sobre la cantidad de comida que ingiere?"
+        self.fields['g15_creer_gordo'].label = "G15 ¿Cree usted que está gordo aunque los demás le digan que está demasiado delgado/a?"
+        self.fields['g16_obsesionado_comida'].label = "G16 ¿Está usted obsesionado con la comida, las dietas y el control de su peso?"
+        self.fields['g17_tiempo_internet'].label = "G17 ¿Dedica más tiempo del que cree que debería a estar conectado a Internet/celular con objetivos distintos a los de su trabajo?"
+        self.fields['g18_quejas_internet'].label = "G18 ¿Se han quejado sus familiares de las horas que dedica a Internet/celular?"
+        self.fields['g19_alejar_internet'].label = "G19 ¿Le resulta duro permanecer alejado de Internet/celular varios días seguidos?"
+        self.fields['g20_controlar_internet'].label = "G20 ¿Tiene problemas para controlar el impulso de conectarse a Internet/celular o ha intentado sin éxito reducir el tiempo que dedica a estar conectado?"
+        self.fields['g21_tiempo_videojuegos'].label = "G21 ¿Dedica más tiempo del que cree que debería a jugar videojuegos?"
+        self.fields['g22_quejar_videojuegos'].label = "G22 ¿Se queja su familia de que pasa demasiado tiempo jugando videojuegos?"
+        self.fields['g23_dias_sin_videojuegos'].label = "G23 ¿Le cuesta trabajo estar varios días sin usar videojuegos?"
+        self.fields['g24_reducir_tiempo_videojuegos'].label = "G24 ¿Ha intentado sin éxito reducir el tiempo que dedica a jugar videojuegos?"
+        self.fields['g25_impulso_comprar'].label = "G25 ¿Tiene usted dificultades para controlar su impulso de comprar, gastando con frecuencia más dinero del que debería?"
+        self.fields['g26_problemas_gastos'].label = "G26 ¿Ha tenido problemas con sus familiares debido a sus gastos excesivos y su falta de control sobre el dinero?"
+        self.fields['g27_problemas_credito'].label = "G27 ¿Ha tenido problemas con su banco o con familiares por hacer un uso excesivo de las tarjetas de crédito/débito o por haberse quedado sin fondos debido a gastos incontrolados?"
+        self.fields['g28_reducir_gastos'].label = "G28 ¿Ha intentado sin éxito controlar su dinero y reducir los gastos innecesarios?"
+        self.fields['g29_sexo_impedir_obligaciones'].label = "G29 ¿Su actividad sexual le ha impedido realizar tareas habituales en su vida, como trabajo u obligaciones familiares?"
+        self.fields['g30_quejas_actividad_sexual'].label = "G30 ¿Se han quejado sus parejas de su excesiva actividad sexual?"
+        self.fields['g31_excesiva_actividad_sexual'].label = "G31 ¿Alguna vez ha considerado que su actividad sexual es excesiva?"
+        self.fields['g32_moderar_actividad_sexual'].label = "G32 ¿Ha intentado alguna vez sin éxito moderar su actividad sexual?"
         self.fields['h1_sentirse_desamparada'].label = "I1 Me siento desamparada cuando estoy sola"
         self.fields['h2_ser_abandonada_pareja'].label = "I2 Me preocupa la idea de ser abandonada por mi pareja"
         self.fields['h3_deslumbrar_pareja'].label = "I3 Para atraer a mi pareja busco deslumbrarlo o divertirlo"
@@ -378,6 +419,21 @@ class AgregarEncuestaHombreForm(forms.ModelForm):
         self.fields['h21_cambiar_planes_por_pareja'].label = "I21 Si tengo planes y mi pareja aparece los cambio sólo por estar con él"
         self.fields['h22_alejar_amigos_por_pareja'].label = "I22 Me alejo demasiado de mis amigos cuando tengo una relación de pareja"
         self.fields['h23_diversion_pareja'].label = "I23 Me divierto solo cuando estoy con mi pareja"
+        self.fields['i1_dificil_esperar_cola'].label = "I1 ¿Le resulta difícil esperar en una cola?"
+        self.fields['i2_cosas_impulsivas'].label = "I2 ¿Hace cosas impulsivamente?"
+        self.fields['i3_dinero_impulsivo'].label = "I3 ¿Gasta dinero impulsivamente?"
+        self.fields['i4_planear_anticipacion'].label = "I4 ¿Planea cosas con anticipación?"
+        self.fields['i5_perder_paciencia'].label = "I5 ¿Pierde la paciencia a menudo?"
+        self.fields['i6_facil_concentrarse'].label = "I6 ¿Le resulta fácil concentrarse?"
+        self.fields['i7_impulsos_sexuales'].label = "I7  ¿Le resulta difícil controlar los impulsos sexuales?"
+        self.fields['i8_decir_primero_cabeza'].label = "I8  ¿Dice usted lo primero que le viene a la cabeza?"
+        self.fields['i9_comer_sin_hambre'].label = "I9  ¿Acostumbra a comer aun cuando no tenga hambre?"
+        self.fields['i10_impulsivo'].label = "I10 ¿Es usted impulsivo?"
+        self.fields['i11_terminar_cosas_empieza'].label = "I11 ¿Termina las cosas que empieza?"
+        self.fields['i12_dificil_control_emociones'].label = "I12 ¿Le resulta difícil controlar las emociones?"
+        self.fields['i13_distraerse_facilmente'].label = "I13 ¿Se distrae fácilmente?"
+        self.fields['i14_dificil_quieto'].label = "I14 ¿Le resulta difícil quedarse quieto?"
+        self.fields['i15_cauteloso'].label = "I15 ¿Es usted cuidadoso o cauteloso?"
         self.fields['j1_dolor_cabeza'].label = "K1 ¿Ha sufrido de dolores de cabeza?"
         self.fields['j2_mal_apetito'].label = "K2 ¿Ha tenido mal apetito? "
         self.fields['j3_mal_dormir'].label = "K3 ¿Ha dormido mal? "
@@ -434,22 +490,34 @@ class AgregarEncuestaHombreForm(forms.ModelForm):
                   'f4_sentirse_distante', 'f5_sentir_incapaz_amar', 'f6_saltar_susto', 'f7_dificultad_concentrarse',
                   'f8_dificultad_dormir', 'f9_sentirse_alerta', 'f10_sentirse_irritable', 'f11_evadir_situaciones',
                   'f12_problemas_recordando', 'f13_perder_interes', 'f14_sentirse_sin_futuro', 'f15_intentar_no_pensar',
-                  'f16_reacciones_fisicas', 'f17_sentir_culpa', 'f_numero_evento', 'h1_sentirse_desamparada',
-                  'h2_ser_abandonada_pareja', 'h3_deslumbrar_pareja', 'h4_centro_atencion_pareja', 'h5_necesitar_afecto',
-                  'h6_angustia_enojo', 'h7_aungustia_ausencia_pareja', 'h8_preocupacion_discucion_pareja',
+                  'f16_reacciones_fisicas', 'f17_sentir_culpa', 'f_numero_evento',  'h1_sentirse_desamparada',
+                  'g1_beber_menos', 'g2_criticar_beber', 'g3_culpable_beber', 'g4_beber_manana', 'g5_reducir_juego',
+                  'g6_ocultar_juego', 'g7_problemas_juego', 'g8_impulsado_juego', 'g9_menos_drogas', 'g10_niega_drogas',
+                  'g11_problema_psicologico_drogas', 'g12_impulsado_drogas', 'g13_vomito_evitar_engordar',
+                  'g14_perder_control_comida', 'g15_creer_gordo', 'g16_obsesionado_comida', 'g17_tiempo_internet',
+                  'g18_quejas_internet', 'g19_alejar_internet', 'g20_controlar_internet', 'g21_tiempo_videojuegos',
+                  'g22_quejar_videojuegos', 'g23_dias_sin_videojuegos', 'g24_reducir_tiempo_videojuegos',
+                  'g25_impulso_comprar', 'g26_problemas_gastos', 'g27_problemas_credito', 'g28_reducir_gastos',
+                  'g29_sexo_impedir_obligaciones', 'g30_quejas_actividad_sexual', 'g31_excesiva_actividad_sexual',
+                  'g32_moderar_actividad_sexual', 'h2_ser_abandonada_pareja', 'h3_deslumbrar_pareja',
+                  'h4_centro_atencion_pareja', 'h5_necesitar_afecto', 'h6_angustia_enojo',
+                  'h7_aungustia_ausencia_pareja', 'h8_preocupacion_discucion_pareja',
                   'h9_hacerse_dano_por_pareja', 'h10_persona_debil_necesitada', 'h11_necesidad_expresividad_pareja',
                   'h12_ser_persona_especial', 'h13_vacia_tras_discusion', 'h14_sentirse_mal_sin_afecto',
                   'h15_temor_por_abandono', 'h16_dejar_todo_por_pareja', 'h17_intranquila_paradero_pareja',
                   'h18_vacia_sola', 'h19_intolerancia_soledad', 'h20_cosas_temerarias_por_amor',
                   'h21_cambiar_planes_por_pareja', 'h22_alejar_amigos_por_pareja', 'h23_diversion_pareja',
-                  'j1_dolor_cabeza', 'j2_mal_apetito', 'j3_mal_dormir', 'j4_facil_susto',
-                  'j5_temblor_manos', 'j6_nervios_sin_causa', 'j7_tensa_sin_causa', 'j8_aburrida', 'j9_mala_digestion',
-                  'j10_no_pensar_claro', 'j11_triste', 'j12_no_disfrutar_diario', 'j13_no_disfrutar_trabajo',
-                  'j14_dicultad_decisiones', 'j15_acabar_vida', 'j16_cansada_sin_razon', 'j17_sensacion_estomago',
-                  'j18_dificultad_diario', 'j19_tratado_herirla', 'j20_controlar_pensamientos', 'j21_escuchar_voces',
-                  'j22_tener_convulsiones', 'j23_llora_frecuentemente', 'j24_util_vida', 'j25_perdidad_interes',
-                  'j26_persona_inutil', 'j27_persona_importante', 'opinion_dificultad_proceso',
-                  'opinion_atencion_terapia')
+                  'i1_dificil_esperar_cola', 'i2_cosas_impulsivas', 'i3_dinero_impulsivo', 'i4_planear_anticipacion',
+                  'i5_perder_paciencia', 'i6_facil_concentrarse', 'i7_impulsos_sexuales', 'i8_decir_primero_cabeza',
+                  'i9_comer_sin_hambre', 'i10_impulsivo', 'i11_terminar_cosas_empieza', 'i12_dificil_control_emociones',
+                  'i13_distraerse_facilmente', 'i14_dificil_quieto', 'i15_cauteloso', 'j1_dolor_cabeza',
+                  'j2_mal_apetito', 'j3_mal_dormir', 'j4_facil_susto', 'j5_temblor_manos', 'j6_nervios_sin_causa',
+                  'j7_tensa_sin_causa', 'j8_aburrida', 'j9_mala_digestion', 'j10_no_pensar_claro', 'j11_triste',
+                  'j12_no_disfrutar_diario', 'j13_no_disfrutar_trabajo', 'j14_dicultad_decisiones', 'j15_acabar_vida',
+                  'j16_cansada_sin_razon', 'j17_sensacion_estomago', 'j18_dificultad_diario', 'j19_tratado_herirla',
+                  'j20_controlar_pensamientos', 'j21_escuchar_voces', 'j22_tener_convulsiones',
+                  'j23_llora_frecuentemente', 'j24_util_vida', 'j25_perdidad_interes', 'j26_persona_inutil',
+                  'j27_persona_importante', 'opinion_dificultad_proceso', 'opinion_atencion_terapia')
 
     widgets = {
         "opinion_dificultad_proceso": forms.Textarea,

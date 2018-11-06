@@ -1074,9 +1074,18 @@
 {% endblock %}
 
 {% block js_block %}
-    {{ form.media.js }}
-
+    <script type="text/javascript" src="{% static 'js/js_campos.js' %}"></script>
     <script>
+        $("#id_c1_relacion_agresor").change(
+            function () {
+                var select = $("#id_c1_relacion_agresor").val()
+                if(select == "5"){
+                    $("#id_c1_otro_especificado").prop('disabled', false)
+                }else{
+                    $("#id_c1_otro_especificado").prop('disabled', true)
+                }
+            }
+        )
         function setText() {
             //Información a mostrar
             document.getElementById("info_mostrar").innerHTML = "¿Está seguro que desea registrar el cuestionario?"
