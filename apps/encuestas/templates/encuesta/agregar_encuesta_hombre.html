@@ -957,6 +957,7 @@
 {% block js_block %}
     <script type="text/javascript" src="{% static 'js/js_campos.js' %}"></script>
     <script>
+        $("#id_id_encuestador").val("{{ user.username }}")
         function setText() {
             //Información a mostrar
             document.getElementById("info_mostrar").innerHTML = "¿Está seguro que desea registrar el cuestionario?"

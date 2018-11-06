@@ -1,4 +1,7 @@
- $("#id_b2_otro").change(
+
+
+
+    $("#id_b2_otro").change(
             function () {
                 if(this.checked){
                     $("#id_b2_otro_especificado").prop('disabled', false)
