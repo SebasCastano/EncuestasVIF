@@ -19,6 +19,7 @@ class AgregarEncuestaMujerForm(forms.ModelForm):
         self.fields['fecha_encuesta'].widget.attrs['disabled'] = True
         self.fields['c1_otro_especificado'].widget.attrs['disabled'] = True
         self.fields['a12a_tipo_sustancia'].widget.attrs['disabled'] = True
+        self.fields['a8a_tipo_discapacidad'].widget.attrs['disabled'] = True
         self.fields['a12b_otro_tipo_sustancia'].widget.attrs['disabled'] = True
         self.fields['b2_otro_especificado'].widget.attrs['disabled'] = True
         self.fields['b6_otro_especificado'].widget.attrs['disabled'] = True
@@ -289,6 +290,7 @@ class AgregarEncuestaHombreForm(forms.ModelForm):
         self.fields['hora_inicio'].widget.attrs['disabled'] = True
         self.fields['hora_final'].widget.attrs['disabled'] = True
         self.fields['id_encuestador'].widget.attrs['disabled'] = True
+        self.fields['a8a_tipo_discapacidad'].widget.attrs['disabled'] = True
         self.fields['a12a_tipo_sustancia'].widget.attrs['disabled'] = True
         self.fields['a12b_otro_tipo_sustancia'].widget.attrs['disabled'] = True
         self.fields['b2_otro_especificado'].widget.attrs['disabled'] = True

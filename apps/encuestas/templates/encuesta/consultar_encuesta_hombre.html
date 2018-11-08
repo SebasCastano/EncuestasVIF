@@ -25,25 +25,25 @@
                   <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Fecha</th>
-                        <th scope="col">Encuestador</th>
-                        <th scope="col">Paciente</th>
-                        <th scope="col">Medicion</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col" style="text-align: center">Fecha</th>
+                        <th scope="col" style="text-align: center">Encuestador</th>
+                        <th scope="col" style="text-align: center">Paciente</th>
+                        <th scope="col" style="text-align: center">Medicion</th>
+                        <th scope="col" style="text-align: center">Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
                       {% for dato in datos %}
                           <tr>
-                              <th scope="row">{{ contador }}</th>
-                              <td> {{ dato.fecha_encuesta }}</td>
-                              <td> {{ dato.id_encuestador }}</td>
-                              <td> {{ dato.id_paciente }}</td>
-                              <td> {{ dato.medicion }}</td>
-                              <td><a href="{% url 'modificar_empleado' dato.id %}"
-                                       class="btn btn-block btn-primary btn-sm">Modificar</a></td>
+                              <th scope="row">{{ contador|add:1 }}</th>
+                              <td style="text-align: center"> {{ dato.fecha_encuesta }}</td>
+                              <td style="text-align: center"> {{ dato.id_encuestador }}</td>
+                              <td style="text-align: center"> {{ dato.id_paciente }}</td>
+                              <td style="text-align: center"> {{ dato.get_medicion_display }}</td>
+                               <td><a href="{% url 'modificar_encuesta_hombre' dato.id %}"
+                                       class="btn btn-block btn-warning btn-sm">Modificar</a>
+                              </td>
                           </tr>
-                          {{ contador|add:1}}
                         {% endfor %}
                   </tbody>
                 </table>

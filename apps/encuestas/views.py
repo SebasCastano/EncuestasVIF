@@ -19,7 +19,7 @@ def agregar_encuesta_mujer (request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Encuesta registrada exitosamente')
-            return redirect(agregar_encuesta_mujer)
+            return redirect(consultar_encuesta_mujer)
         else:
             print(form.errors)
             messages.error(request, 'No se pudo registrar la encuesta')
@@ -34,7 +34,7 @@ def agregar_encuesta_hombre(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Encuesta registrada exitosamente')
-            return redirect(agregar_encuesta_hombre)
+            return redirect(consultar_encuesta_hombre)
         else:
             print(form.errors)
             messages.error(request, 'No se pudo registrar la encuesta')
@@ -44,13 +44,48 @@ def agregar_encuesta_hombre(request):
 @login_required
 def consultar_encuesta_mujer(request):
     datos = list(DatosMujeres.objects.all())
-    contador = 1
+    contador = 0
     contexto = {'datos': datos, 'contador': contador}
     return render(request, 'encuesta/consultar_encuesta_mujer.html', contexto)
 
 @login_required
 def consultar_encuesta_hombre(request):
     datos = list(DatosHombres.objects.all())
-    contador = 1
+    contador = 0
     contexto = {'datos': datos, 'contador': contador}
     return render(request, 'encuesta/consultar_encuesta_hombre.html', contexto)
+
+
+@login_required
+def modificar_encuesta_mujer(request, id_encuesta):
+    datos = DatosMujeres.objects.get(id=id_encuesta)
+    form = AgregarEncuestaMujerForm(instance=datos)
+    if request.method == 'POST':
+
+        form = AgregarEncuestaMujerForm(request.POST, instance=datos)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Encuesta Modificada exitosamente')
+            return redirect(consultar_encuesta_mujer)
+        else:
+            print(form.errors)
+            messages.error(request, 'No se pudo modificar la encuesta')
+    contexto = {'form': form}
+    return render(request, 'encuesta/modificar_encuesta_mujer.html', contexto)
+
+@login_required
+def modificar_encuesta_hombre(request, id_encuesta):
+    datos = DatosHombres.objects.get(id=id_encuesta)
+    form = AgregarEncuestaHombreForm(instance=datos)
+    if request.method == 'POST':
+
+        form = AgregarEncuestaHombreForm(request.POST, instance=datos)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Encuesta Modificada exitosamente')
+            return redirect(consultar_encuesta_hombre)
+        else:
+            print(form.errors)
+            messages.error(request, 'No se pudo modificar la encuesta')
+    contexto = {'form': form}
+    return render(request, 'encuesta/modificar_encuesta_hombre.html', contexto)

@@ -3,11 +3,11 @@
 {% load staticfiles %}
 
 
-{% block title_block %} Agregar Encuesta Hombre {% endblock %}
+{% block title_block %} Modificar Encuesta Hombre {% endblock %}
 
 
 
-{% block title_content_block %}Agregar Encuesta Hombre - VIF{% endblock %}
+{% block title_content_block %}Modificar Encuesta Hombre - VIF{% endblock %}
 
 {% block css_block %}
 
@@ -922,7 +922,7 @@
                         <hr>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary" data-target="#modal-default" onclick="setText()" type="button">Guardar</button>
+                <button type="button" class="btn btn-primary" data-target="#modal-default" onclick="setText()" type="button">Modificar</button>
             </div>
 
 
@@ -945,7 +945,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" onclick="cerrarModal()">Registrar</button>
+                <button type="submit" class="btn btn-primary" onclick="cerrarModal()">Modificar</button>
               </div>
             </div>
           </div>
@@ -960,7 +960,7 @@
         $("#id_id_encuestador").val("{{ user.username }}")
         function setText() {
             //Información a mostrar
-            document.getElementById("info_mostrar").innerHTML = "¿Está seguro que desea registrar el cuestionario?"
+            document.getElementById("info_mostrar").innerHTML = "¿Está seguro que desea modificar el cuestionario?"
             $("#modal-default").modal('toggle');
         }
 
@@ -969,12 +969,6 @@
             $("#id_hora_inicio").prop('disabled', false)
             $("#id_hora_final").prop('disabled', false)
             $("#id_fecha_encuesta").prop('disabled', false)
-            var d = new Date();
-            var horas = d.getHours();
-            var minutos = d.getMinutes();
-            var segundos = d.getSeconds();
-            var horaFinal = horas + ":" + minutos + ":" + segundos
-            $("#id_hora_final").val(horaFinal)
             $("#modal-default").modal('hide')
         }
     </script>

@@ -43,3 +43,14 @@
                 }
             }
         )
+
+        $("#id_a8_discapacidad").change(
+            function () {
+                var select = $("#id_a8_discapacidad").val()
+                if(select == "1"){
+                    $("#id_a8a_tipo_discapacidad").prop('disabled', false)
+                }else{
+                    $("#id_a8a_tipo_discapacidad").prop('disabled', true)
+                }
+            }
+        )
