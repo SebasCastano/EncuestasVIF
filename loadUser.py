@@ -3,6 +3,7 @@ user = User.objects.create_user('sistemas', 'castano.sebastian@correounivalle.ed
 user.save()
 user1 = User.objects.create_user('prueba', 'prueba@correounivalle.edu.co', 'prueba')
 user1.save()
+from django.contrib.auth.models import User
 user2 = User.objects.create_user('764407', 'dlaraque@gmail.com', 'diana764407')
 user2.first_name = 'Diana'
 user2.last_name = 'Araque'

@@ -54,3 +54,17 @@
                 }
             }
         )
+
+        $("#id_medicion").change(
+            function () {
+                var select = $("#id_medicion").val()
+                if(select == "2" || select == "3"){
+                    $("#seccionK").hide()
+                    $("#opiniones").show()
+                }else{
+                    $("#seccionK").show()
+                    $("#opiniones").hide()
+
+                }
+            }
+        )
